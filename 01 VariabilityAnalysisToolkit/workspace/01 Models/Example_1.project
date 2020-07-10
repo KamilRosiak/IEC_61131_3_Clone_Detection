@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<C:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:C="http://www.example.org/ppuIECScenario/config" xmlns:D="http://www.example.org/ppuIECScenario/Diagram" xmlns:FBD="http://www.example.org/ppuIECScenario/FunctionBlockDiagram" xmlns:LD="http://www.example.org/ppuIECScenario/LadderDiagram" xmlns:SFC="http://www.example.org/ppuIECScenario/SFC" xmlns:ST="http://www.example.org/ppuIECScenario/ST" xmlns:STE="http://www.example.org/ppuIECScenario/STE" identifier="Example">
+  <resources name="Example">
+    <pous identifier="Example">
+      <declaration>
+        <internalVariables name="A" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <internalVariables name="B" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+      </declaration>
+      <implementations xsi:type="SFC:SequentialFunctionChart" label="Example">
+        <steps name="Start" outgoingTransitions="//@resources.0/@pous.0/@implementations.0/@transitions.0" local_ID="0" initialStep="true">
+          <actions xsi:type="SFC:ComplexAction" localId="1" qualifier="D" pouAction="//@resources.0/@pous.0/@actions.0"/>
+        </steps>
+        <transitions condition="B" isJump="true" sourceStep="//@resources.0/@pous.0/@implementations.0/@steps.0" targetStep="//@resources.0/@pous.0/@implementations.0/@steps.0" local_ID="4"/>
+      </implementations>
+      <actions name="EXIT_ACTION">
+        <implementation xsi:type="D:Diagram" label="EXIT_ACTION">
+          <networks xsi:type="LD:LadderNetwork" diagram="//@resources.0/@pous.0/@actions.0/@implementation" position="1" leftPowerRail="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.0" rightPowerRail="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.3">
+            <networkElements xsi:type="LD:LLElement" targetElements="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.1" localId="0" TransitElementType="LEFT_POWERRAIL">
+              <outputPorts attachedElement="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.0" connectedPorts="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.1/@inputPorts.0"/>
+            </networkElements>
+            <networkElements xsi:type="LD:LLElement" sourceElements="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.0" targetElements="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.2" localId="4" level="1" TransitElementType="CONTACT" status="NORMAL_OPEN">
+              <inputPorts attachedElement="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.1" connectedPorts="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.0/@outputPorts.0"/>
+              <outputPorts attachedElement="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.1" connectedPorts="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.2/@inputPorts.0"/>
+              <labeledVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="A"/>
+            </networkElements>
+            <networkElements xsi:type="FBD:ExecutionBlock" sourceElements="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.1" targetElements="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.3" localId="3" level="2" FBDElementType="EXECUTION_BLOCK">
+              <inputPorts xsi:type="D:FBPort" attachedElement="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.2" connectedPorts="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.1/@outputPorts.0" connected="true">
+                <portVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="EN"/>
+              </inputPorts>
+              <outputPorts xsi:type="D:FBPort" attachedElement="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.2" connectedPorts="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.3/@inputPorts.0" connected="true">
+                <portVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="ENO"/>
+              </outputPorts>
+              <executionStatements id="_-31TUMAsEeq4QqmEsMqoxQ" text="IF A THEN&#xA;&#x9;B:= FALSE;&#xA;&#x9;A:= FALSE;&#xA;END_IF">
+                <statements xsi:type="ST:If" id="_-31TV8AsEeq4QqmEsMqoxQ" statementType="IF" absStartLine="1" absEndLine="4" relStartLine="1" relEndLine="4" endColumnPos="5" structuredText="_-31TUMAsEeq4QqmEsMqoxQ">
+                  <conditionalBlocks id="_-31TVsAsEeq4QqmEsMqoxQ" statementType="CONDITIONAL_BLOCK" absStartLine="1" absEndLine="3" relStartLine="1" relEndLine="3" endColumnPos="10" structuredText="_-31TUMAsEeq4QqmEsMqoxQ" else="false">
+                    <condition xsi:type="STE:VariableExpression" id="_-31TUcAsEeq4QqmEsMqoxQ" dataType="DERIVED" expressionType="VARIABLE" Symbol="A"/>
+                    <substatements xsi:type="ST:Assignment" id="_-31TU8AsEeq4QqmEsMqoxQ" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" startColumnPos="1" endColumnPos="10" structuredText="_-31TUMAsEeq4QqmEsMqoxQ">
+                      <left dataType="DERIVED" expressionType="VARIABLE" Symbol="B"/>
+                      <right xsi:type="STE:Literal" id="_-31TUsAsEeq4QqmEsMqoxQ" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                    </substatements>
+                    <substatements xsi:type="ST:Assignment" id="_-31TVcAsEeq4QqmEsMqoxQ" statementType="ASSIGNMENT" absStartLine="3" absEndLine="3" relStartLine="3" relEndLine="3" startColumnPos="1" endColumnPos="10" structuredText="_-31TUMAsEeq4QqmEsMqoxQ">
+                      <left dataType="DERIVED" expressionType="VARIABLE" Symbol="A"/>
+                      <right xsi:type="STE:Literal" id="_-31TVMAsEeq4QqmEsMqoxQ" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                    </substatements>
+                  </conditionalBlocks>
+                </statements>
+              </executionStatements>
+            </networkElements>
+            <networkElements xsi:type="LD:LLElement" sourceElements="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.2" localId="2147483646" level="3" TransitElementType="RIGHT_POWERRAIL">
+              <inputPorts attachedElement="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.3" connectedPorts="//@resources.0/@pous.0/@actions.0/@implementation/@networks.0/@networkElements.2/@outputPorts.0"/>
+            </networkElements>
+          </networks>
+        </implementation>
+      </actions>
+    </pous>
+    <tasks name="PlcTask"/>
+  </resources>
+</C:Configuration>

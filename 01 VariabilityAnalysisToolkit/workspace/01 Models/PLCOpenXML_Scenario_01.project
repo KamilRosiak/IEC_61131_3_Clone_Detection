@@ -1,0 +1,1608 @@
+<?xml version="1.0" encoding="ASCII"?>
+<C:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:C="http://www.example.org/ppuIECScenario/config" xmlns:SFC="http://www.example.org/ppuIECScenario/SFC" xmlns:ST="http://www.example.org/ppuIECScenario/ST" xmlns:STE="http://www.example.org/ppuIECScenario/STE" identifier="Scenario_1">
+  <resources name="Scenario_1">
+    <globalVariables name="IsSFCResetting" scope="VAR_GLOBAL" type="BOOL" typeName="BOOL">
+      <location/>
+    </globalVariables>
+    <pous controlTasks="//@resources.0/@tasks.0" callees="//@resources.0/@pous.11" identifier="MAIN">
+      <declaration>
+        <comment identifier="MAIN">
+          <statements>//WPType</statements>
+          <statements>//Stack WPType</statements>
+          <statements>//Crane WPType</statements>
+          <statements>//Free Signale for follow plant section</statements>
+          <statements>//Stack</statements>
+          <statements>//Crane</statements>
+        </comment>
+        <comment identifier="MAIN">
+          <statements>//WPType</statements>
+          <statements>//Stack WPType</statements>
+          <statements>//Crane WPType</statements>
+          <statements>//Free Signale for follow plant section</statements>
+          <statements>//Stack</statements>
+          <statements>//Crane</statements>
+        </comment>
+        <internalVariables name="PPU" scope="VAR" type="DERIVED" typeName="PPU">
+          <location/>
+        </internalVariables>
+        <internalVariables name="Stack_WPType_Black" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <internalVariables name="Crane_WPType_Black" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <internalVariables name="Stack_WPProvided" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <internalVariables name="Crane_PickedUpStackWP" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+      </declaration>
+      <implementations xsi:type="ST:StructuredText" label="MAIN" id="_qc5McL34EequD661lQoFzA" text="PPU();&#xA;PPU.Stack();&#xA;PPU.Crane();&#xA;&#xA;&#xA;//WPType&#xA;&#x9;//Stack WPType&#xA;&#x9;Stack_WPType_Black := PPU.Stack.WPType_Black;&#xA;&#x9;//Crane WPType&#xA;&#x9;Crane_WPType_Black := PPU.Crane.WPType_Black;&#xA;&#x9;&#xA;//Free Signale for follow plant section&#xA;&#x9;//Stack&#xA;&#x9;Stack_WPProvided := PPU.Stack.WPProvided;&#xA;&#x9;//Crane&#xA;&#x9;Crane_PickedUpStackWP := PPU.Crane.Table.AtStack.DI_SwitchTrue AND PPU.Crane.WPPickedUp;">
+        <statements xsi:type="ST:FunctionCallStatement" id="_qc6akL34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="5" structuredText="_qc5McL34EequD661lQoFzA">
+          <functionCall expressionType="FUNCTION_CALL" symbol="PPU"/>
+        </statements>
+        <statements xsi:type="ST:FunctionCallStatement" id="_qc7BoL34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="11" structuredText="_qc5McL34EequD661lQoFzA">
+          <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="PPU"/>
+          <functionCall expressionType="FUNCTION_CALL" symbol="Stack"/>
+        </statements>
+        <statements xsi:type="ST:FunctionCallStatement" id="_qc7Bob34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="3" absEndLine="3" relStartLine="3" relEndLine="3" endColumnPos="11" structuredText="_qc5McL34EequD661lQoFzA">
+          <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="PPU"/>
+          <functionCall expressionType="FUNCTION_CALL" symbol="Crane"/>
+        </statements>
+        <statements xsi:type="ST:Assignment" id="_qc7Bo734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="8" absEndLine="8" relStartLine="8" relEndLine="8" startColumnPos="1" endColumnPos="45" structuredText="_qc5McL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack_WPType_Black"/>
+          <right xsi:type="STE:VariableExpression" id="_qc7Bor34EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="PPU">
+            <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="WPType_Black"/>
+            </innerVariable>
+          </right>
+        </statements>
+        <statements xsi:type="ST:Assignment" id="_qc7Bpb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="10" absEndLine="10" relStartLine="10" relEndLine="10" startColumnPos="1" endColumnPos="45" structuredText="_qc5McL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane_WPType_Black"/>
+          <right xsi:type="STE:VariableExpression" id="_qc7BpL34EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="PPU">
+            <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="WPType_Black"/>
+            </innerVariable>
+          </right>
+        </statements>
+        <statements xsi:type="ST:Assignment" id="_qc7Bp734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="14" absEndLine="14" relStartLine="14" relEndLine="14" startColumnPos="1" endColumnPos="41" structuredText="_qc5McL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack_WPProvided"/>
+          <right xsi:type="STE:VariableExpression" id="_qc7Bpr34EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="PPU">
+            <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="WPProvided"/>
+            </innerVariable>
+          </right>
+        </statements>
+        <statements xsi:type="ST:Assignment" id="_qc8Pwb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="16" absEndLine="16" relStartLine="16" relEndLine="16" startColumnPos="1" endColumnPos="88" structuredText="_qc5McL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane_PickedUpStackWP"/>
+          <right xsi:type="STE:BinaryExpression" id="_qc8PwL34EequD661lQoFzA" operator="AND">
+            <left xsi:type="STE:VariableExpression" dataType="DERIVED" expressionType="VARIABLE" Symbol="PPU">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+                <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Table">
+                  <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="AtStack">
+                    <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="DI_SwitchTrue"/>
+                  </innerVariable>
+                </innerVariable>
+              </innerVariable>
+            </left>
+            <right xsi:type="STE:VariableExpression" dataType="DERIVED" expressionType="VARIABLE" Symbol="PPU">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+                <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="WPPickedUp"/>
+              </innerVariable>
+            </right>
+          </right>
+        </statements>
+      </implementations>
+    </pous>
+    <pous callers="//@resources.0/@pous.5 //@resources.0/@pous.10" identifier="MicroSwitch" type="FUNCTIONBLOCK">
+      <declaration>
+        <comment identifier="MicroSwitch">
+          <statements>//Hardware</statements>
+        </comment>
+        <internalVariables name="DI_SwitchTrue" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="I" dataType="None"/>
+        </internalVariables>
+      </declaration>
+    </pous>
+    <pous callers="//@resources.0/@pous.9 //@resources.0/@pous.10" identifier="MonostableCylinder" type="FUNCTIONBLOCK">
+      <declaration>
+        <comment identifier="MonostableCylinder">
+          <statements>//Software</statements>
+          <statements>//Hardware</statements>
+        </comment>
+        <internalVariables name="DI_Extended" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="I" dataType="None"/>
+        </internalVariables>
+        <internalVariables name="DI_Retracted" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="I" dataType="None"/>
+        </internalVariables>
+        <internalVariables name="DO_Extend" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="Q" dataType="None"/>
+        </internalVariables>
+        <internalVariables name="SFCInit" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <internalVariables name="SFCReset" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <outputVariables name="Extended" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="Retracted" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+      </declaration>
+      <actions name="ACT_Extend">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_Extend">
+          <steps name="Init_ACT_Extend" outgoingTransitions="//@resources.0/@pous.2/@actions.0/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="Extend_Cylinder" incomingTransitions="//@resources.0/@pous.2/@actions.0/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.2/@actions.0/@implementation/@transitions.1" local_ID="3" stepLevel="1">
+            <actions xsi:type="SFC:SimpleAction" localId="4" qualifier="S" actionVariable="//@resources.0/@pous.2/@declaration/@internalVariables.2"/>
+          </steps>
+          <steps name="SetExtended" incomingTransitions="//@resources.0/@pous.2/@actions.0/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.2/@actions.0/@implementation/@transitions.2" local_ID="8" stepLevel="2">
+            <actions xsi:type="SFC:SimpleAction" localId="9" qualifier="N" actionVariable="//@resources.0/@pous.2/@declaration/@outputVariables.0"/>
+          </steps>
+          <transitions condition="NOT Extended AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.2/@actions.0/@implementation/@steps.0" targetStep="//@resources.0/@pous.2/@actions.0/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="DI_Extended" sourceStep="//@resources.0/@pous.2/@actions.0/@implementation/@steps.1" targetStep="//@resources.0/@pous.2/@actions.0/@implementation/@steps.2" local_ID="7"/>
+          <transitions condition="Extended" isJump="true" sourceStep="//@resources.0/@pous.2/@actions.0/@implementation/@steps.2" targetStep="//@resources.0/@pous.2/@actions.0/@implementation/@steps.0" local_ID="12"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_Retract">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_Retract">
+          <steps name="Init_ACT_Retract" outgoingTransitions="//@resources.0/@pous.2/@actions.1/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="Retract_Cylinder" incomingTransitions="//@resources.0/@pous.2/@actions.1/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.2/@actions.1/@implementation/@transitions.1" local_ID="3" stepLevel="1">
+            <actions xsi:type="SFC:SimpleAction" localId="4" qualifier="R" actionVariable="//@resources.0/@pous.2/@declaration/@internalVariables.2"/>
+          </steps>
+          <steps name="SetRetacted" incomingTransitions="//@resources.0/@pous.2/@actions.1/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.2/@actions.1/@implementation/@transitions.2" local_ID="8" stepLevel="2">
+            <actions xsi:type="SFC:SimpleAction" localId="9" qualifier="N" actionVariable="//@resources.0/@pous.2/@declaration/@outputVariables.1"/>
+          </steps>
+          <transitions condition="NOT Retracted AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.2/@actions.1/@implementation/@steps.0" targetStep="//@resources.0/@pous.2/@actions.1/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="DI_Retracted" sourceStep="//@resources.0/@pous.2/@actions.1/@implementation/@steps.1" targetStep="//@resources.0/@pous.2/@actions.1/@implementation/@steps.2" local_ID="7"/>
+          <transitions condition="Retracted" isJump="true" sourceStep="//@resources.0/@pous.2/@actions.1/@implementation/@steps.2" targetStep="//@resources.0/@pous.2/@actions.1/@implementation/@steps.0" local_ID="12"/>
+        </implementation>
+      </actions>
+    </pous>
+    <pous callers="//@resources.0/@pous.5" identifier="Motor" type="FUNCTIONBLOCK">
+      <declaration>
+        <comment identifier="Motor">
+          <statements>//Software</statements>
+          <statements>//Hardware</statements>
+        </comment>
+        <internalVariables name="DO_TurnClockwise" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="Q" dataType="None"/>
+        </internalVariables>
+        <internalVariables name="DO_TurnCounterclockwise" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="Q" dataType="None"/>
+        </internalVariables>
+        <outputVariables name="Stopped" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="TurningClockwise" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="TurningCounterclockwise" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+      </declaration>
+      <actions name="ACT_Stop">
+        <implementation xsi:type="ST:StructuredText" label="ACT_Stop" id="_qdBvUL34EequD661lQoFzA" text="DO_TurnClockwise := FALSE;&#xA;DO_TurnCounterclockwise := FALSE;&#xA;&#xA;Stopped := TRUE;&#xA;TurningClockwise := FALSE;&#xA;TurningCounterclockwise := FALSE;">
+          <statements xsi:type="ST:Assignment" id="_qdBvUr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="25" structuredText="_qdBvUL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_TurnClockwise"/>
+            <right xsi:type="STE:Literal" id="_qdBvUb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdBvVL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="32" structuredText="_qdBvUL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_TurnCounterclockwise"/>
+            <right xsi:type="STE:Literal" id="_qdBvU734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdBvVr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" endColumnPos="15" structuredText="_qdBvUL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Stopped"/>
+            <right xsi:type="STE:Literal" id="_qdBvVb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdBvWL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="5" absEndLine="5" relStartLine="5" relEndLine="5" endColumnPos="25" structuredText="_qdBvUL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="TurningClockwise"/>
+            <right xsi:type="STE:Literal" id="_qdBvV734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdBvWr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="6" absEndLine="6" relStartLine="6" relEndLine="6" endColumnPos="32" structuredText="_qdBvUL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="TurningCounterclockwise"/>
+            <right xsi:type="STE:Literal" id="_qdBvWb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="ACT_TurnClockwise">
+        <implementation xsi:type="ST:StructuredText" label="ACT_TurnClockwise" id="_qdCWYL34EequD661lQoFzA" text="DO_TurnClockwise := TRUE;&#xA;DO_TurnCounterclockwise := FALSE;&#xA;&#xA;Stopped := FALSE;&#xA;TurningClockwise := TRUE;&#xA;TurningCounterclockwise := FALSE;">
+          <statements xsi:type="ST:Assignment" id="_qdCWYr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="24" structuredText="_qdCWYL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_TurnClockwise"/>
+            <right xsi:type="STE:Literal" id="_qdCWYb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdCWZL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="32" structuredText="_qdCWYL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_TurnCounterclockwise"/>
+            <right xsi:type="STE:Literal" id="_qdCWY734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdCWZr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" endColumnPos="16" structuredText="_qdCWYL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Stopped"/>
+            <right xsi:type="STE:Literal" id="_qdCWZb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdCWaL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="5" absEndLine="5" relStartLine="5" relEndLine="5" endColumnPos="24" structuredText="_qdCWYL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="TurningClockwise"/>
+            <right xsi:type="STE:Literal" id="_qdCWZ734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdCWar34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="6" absEndLine="6" relStartLine="6" relEndLine="6" endColumnPos="32" structuredText="_qdCWYL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="TurningCounterclockwise"/>
+            <right xsi:type="STE:Literal" id="_qdCWab34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="ACT_TurnCounterclockwise">
+        <implementation xsi:type="ST:StructuredText" label="ACT_TurnCounterclockwise" id="_qdC9cL34EequD661lQoFzA" text="DO_TurnClockwise := FALSE;&#xA;DO_TurnCounterclockwise := TRUE;&#xA;&#xA;Stopped := FALSE;&#xA;TurningClockwise := FALSE;&#xA;TurningCounterclockwise := TRUE;">
+          <statements xsi:type="ST:Assignment" id="_qdC9cr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="25" structuredText="_qdC9cL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_TurnClockwise"/>
+            <right xsi:type="STE:Literal" id="_qdC9cb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdC9dL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="31" structuredText="_qdC9cL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_TurnCounterclockwise"/>
+            <right xsi:type="STE:Literal" id="_qdC9c734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdC9dr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" endColumnPos="16" structuredText="_qdC9cL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Stopped"/>
+            <right xsi:type="STE:Literal" id="_qdC9db34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdC9eL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="5" absEndLine="5" relStartLine="5" relEndLine="5" endColumnPos="25" structuredText="_qdC9cL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="TurningClockwise"/>
+            <right xsi:type="STE:Literal" id="_qdC9d734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdC9er34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="6" absEndLine="6" relStartLine="6" relEndLine="6" endColumnPos="31" structuredText="_qdC9cL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="TurningCounterclockwise"/>
+            <right xsi:type="STE:Literal" id="_qdC9eb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+        </implementation>
+      </actions>
+    </pous>
+    <pous callers="//@resources.0/@pous.10" identifier="OperationPanel" type="FUNCTIONBLOCK">
+      <declaration>
+        <comment identifier="OperationPanel">
+          <statements>//Software</statements>
+          <statements>//Hardware</statements>
+        </comment>
+        <internalVariables name="DI_StartButton" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="I" dataType="None"/>
+        </internalVariables>
+        <internalVariables name="DI_ManuelButton" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="I" dataType="None"/>
+        </internalVariables>
+        <internalVariables name="DI_EmergencyStop" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="I" dataType="None"/>
+        </internalVariables>
+        <internalVariables name="DO_LampGreen" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="Q" dataType="None"/>
+        </internalVariables>
+        <internalVariables name="DO_LampWhite" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="Q" dataType="None"/>
+        </internalVariables>
+        <outputVariables name="EmergencyStop" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="StartButton" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="ManuelMode" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+      </declaration>
+      <implementations xsi:type="ST:StructuredText" label="OperationPanel" id="_qdELkL34EequD661lQoFzA" text="EmergencyStop := NOT DI_EmergencyStop;&#xA;StartButton := DI_StartButton;&#xA;ManuelMode := DI_ManuelButton;">
+        <statements xsi:type="ST:Assignment" id="_qdEyob34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="37" structuredText="_qdELkL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyStop"/>
+          <right xsi:type="STE:UnaryExpression" id="_qdEyoL34EequD661lQoFzA" dataType="DERIVED" expressionType="UNARY" operator="NOT">
+            <subexpression xsi:type="STE:VariableExpression" dataType="DERIVED" expressionType="VARIABLE" Symbol="DI_EmergencyStop"/>
+          </right>
+        </statements>
+        <statements xsi:type="ST:Assignment" id="_qdEyo734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="29" structuredText="_qdELkL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="StartButton"/>
+          <right xsi:type="STE:VariableExpression" id="_qdEyor34EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="DI_StartButton"/>
+        </statements>
+        <statements xsi:type="ST:Assignment" id="_qdEypb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="3" absEndLine="3" relStartLine="3" relEndLine="3" endColumnPos="29" structuredText="_qdELkL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="ManuelMode"/>
+          <right xsi:type="STE:VariableExpression" id="_qdEypL34EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="DI_ManuelButton"/>
+        </statements>
+      </implementations>
+      <actions name="ACT_TurnLampGreen_Off">
+        <implementation xsi:type="ST:StructuredText" label="ACT_TurnLampGreen_Off" id="_qdC9e734EequD661lQoFzA" text="DO_LampGreen := FALSE;">
+          <statements xsi:type="ST:Assignment" id="_qdC9fb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="21" structuredText="_qdC9e734EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_LampGreen"/>
+            <right xsi:type="STE:Literal" id="_qdC9fL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="ACT_TurnLampGreen_On">
+        <implementation xsi:type="ST:StructuredText" label="ACT_TurnLampGreen_On" id="_qdDkgL34EequD661lQoFzA" text="DO_LampGreen := TRUE;">
+          <statements xsi:type="ST:Assignment" id="_qdDkgr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="20" structuredText="_qdDkgL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_LampGreen"/>
+            <right xsi:type="STE:Literal" id="_qdDkgb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="ACT_TurnLampWhite_Off">
+        <implementation xsi:type="ST:StructuredText" label="ACT_TurnLampWhite_Off" id="_qdDkg734EequD661lQoFzA" text="DO_LampWhite:=FALSE;">
+          <statements xsi:type="ST:Assignment" id="_qdDkhb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="19" structuredText="_qdDkg734EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_LampWhite"/>
+            <right xsi:type="STE:Literal" id="_qdDkhL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="ACT_TurnLampWhite_On">
+        <implementation xsi:type="ST:StructuredText" label="ACT_TurnLampWhite_On" id="_qdDkhr34EequD661lQoFzA" text="DO_LampWhite:=TRUE;">
+          <statements xsi:type="ST:Assignment" id="_qdDkiL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="18" structuredText="_qdDkhr34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_LampWhite"/>
+            <right xsi:type="STE:Literal" id="_qdDkh734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+        </implementation>
+      </actions>
+    </pous>
+    <pous callees="//@resources.0/@pous.3 //@resources.0/@pous.1" callers="//@resources.0/@pous.9" identifier="TurningTable" type="FUNCTIONBLOCK">
+      <declaration>
+        <comment identifier="TurningTable">
+          <statements>//Hardware</statements>
+        </comment>
+        <internalVariables name="Motor" scope="VAR" type="DERIVED" typeName="Motor">
+          <location/>
+        </internalVariables>
+        <internalVariables name="AtStack" scope="VAR" type="DERIVED" typeName="MicroSwitch">
+          <location/>
+        </internalVariables>
+        <internalVariables name="AtRamp" scope="VAR" type="DERIVED" typeName="MicroSwitch">
+          <location/>
+        </internalVariables>
+      </declaration>
+    </pous>
+    <pous callees="//@resources.0/@pous.7 //@resources.0/@pous.8" callers="//@resources.0/@pous.9" identifier="VacuumGripper" type="FUNCTIONBLOCK">
+      <declaration>
+        <inputVariables name="Valve" scope="VAR_INPUT" type="DERIVED" typeName="Valve">
+          <location/>
+        </inputVariables>
+        <inputVariables name="VacuumSwitch" scope="VAR_INPUT" type="DERIVED" typeName="VacuumSwitch">
+          <location/>
+        </inputVariables>
+        <comment identifier="VacuumGripper">
+          <statements>//Hardware</statements>
+          <statements>//Software</statements>
+        </comment>
+        <internalVariables name="SFCInit" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <internalVariables name="SFCReset" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <outputVariables name="Intaken" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="Released" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+      </declaration>
+      <actions name="ACT_Intake">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_Intake">
+          <steps name="Init_ACT_Intake" outgoingTransitions="//@resources.0/@pous.6/@actions.0/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="TurnVacuumOn" incomingTransitions="//@resources.0/@pous.6/@actions.0/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.6/@actions.0/@implementation/@transitions.1" local_ID="3" stepLevel="1"/>
+          <steps name="SetWPTakenIn" incomingTransitions="//@resources.0/@pous.6/@actions.0/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.6/@actions.0/@implementation/@transitions.2" local_ID="6" stepLevel="2">
+            <actions xsi:type="SFC:SimpleAction" localId="7" qualifier="N" actionVariable="//@resources.0/@pous.6/@declaration/@outputVariables.0"/>
+          </steps>
+          <transitions condition="NOT Intaken AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.6/@actions.0/@implementation/@steps.0" targetStep="//@resources.0/@pous.6/@actions.0/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="VacuumSwitch.DI_TakenIn" sourceStep="//@resources.0/@pous.6/@actions.0/@implementation/@steps.1" targetStep="//@resources.0/@pous.6/@actions.0/@implementation/@steps.2" local_ID="5"/>
+          <transitions condition="Intaken" isJump="true" sourceStep="//@resources.0/@pous.6/@actions.0/@implementation/@steps.2" targetStep="//@resources.0/@pous.6/@actions.0/@implementation/@steps.0" local_ID="10"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_Release">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_Release">
+          <steps name="Init_ACT_Release" outgoingTransitions="//@resources.0/@pous.6/@actions.1/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="TurnVacuumOff" incomingTransitions="//@resources.0/@pous.6/@actions.1/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.6/@actions.1/@implementation/@transitions.1" local_ID="3" stepLevel="1"/>
+          <steps name="SetWPReleased" incomingTransitions="//@resources.0/@pous.6/@actions.1/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.6/@actions.1/@implementation/@transitions.2" local_ID="6" stepLevel="2">
+            <actions xsi:type="SFC:SimpleAction" localId="7" qualifier="N" actionVariable="//@resources.0/@pous.6/@declaration/@outputVariables.1"/>
+          </steps>
+          <transitions condition="NOT Released AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.6/@actions.1/@implementation/@steps.0" targetStep="//@resources.0/@pous.6/@actions.1/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="NOT VacuumSwitch.DI_TakenIn" sourceStep="//@resources.0/@pous.6/@actions.1/@implementation/@steps.1" targetStep="//@resources.0/@pous.6/@actions.1/@implementation/@steps.2" local_ID="5"/>
+          <transitions condition="Released" isJump="true" sourceStep="//@resources.0/@pous.6/@actions.1/@implementation/@steps.2" targetStep="//@resources.0/@pous.6/@actions.1/@implementation/@steps.0" local_ID="10"/>
+        </implementation>
+      </actions>
+    </pous>
+    <pous callers="//@resources.0/@pous.6" identifier="VacuumSwitch" type="FUNCTIONBLOCK">
+      <declaration>
+        <comment identifier="VacuumSwitch">
+          <statements>//Hardware</statements>
+        </comment>
+        <internalVariables name="DI_TakenIn" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="I" dataType="None"/>
+        </internalVariables>
+      </declaration>
+    </pous>
+    <pous callers="//@resources.0/@pous.6" identifier="Valve" type="FUNCTIONBLOCK">
+      <declaration>
+        <comment identifier="Valve">
+          <statements>//Hardware</statements>
+        </comment>
+        <internalVariables name="DO_VacuumOn" scope="VAR" type="BOOL" typeName="BOOL">
+          <location type="Q" dataType="None"/>
+        </internalVariables>
+      </declaration>
+      <actions name="ACT_TurnVacuumOff">
+        <implementation xsi:type="ST:StructuredText" label="ACT_TurnVacuumOff" id="_qdFZsL34EequD661lQoFzA" text="DO_VacuumOn := FALSE;">
+          <statements xsi:type="ST:Assignment" id="_qdFZsr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="20" structuredText="_qdFZsL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_VacuumOn"/>
+            <right xsi:type="STE:Literal" id="_qdFZsb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="ACT_TurnVacuumOn">
+        <implementation xsi:type="ST:StructuredText" label="ACT_TurnVacuumOn" id="_qdFZs734EequD661lQoFzA" text="DO_VacuumOn := TRUE;">
+          <statements xsi:type="ST:Assignment" id="_qdFZtb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="19" structuredText="_qdFZs734EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="DO_VacuumOn"/>
+            <right xsi:type="STE:Literal" id="_qdFZtL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+        </implementation>
+      </actions>
+    </pous>
+    <pous callees="//@resources.0/@pous.2 //@resources.0/@pous.6 //@resources.0/@pous.5" callers="//@resources.0/@pous.11" identifier="Crane" type="FUNCTIONBLOCK">
+      <declaration>
+        <inputVariables name="LiftingCylinder" scope="VAR_INPUT" type="DERIVED" typeName="MonostableCylinder">
+          <location/>
+        </inputVariables>
+        <inputVariables name="Gripper" scope="VAR_INPUT" type="DERIVED" typeName="VacuumGripper">
+          <location/>
+        </inputVariables>
+        <inputVariables name="Table" scope="VAR_INPUT" type="DERIVED" typeName="TurningTable">
+          <location/>
+        </inputVariables>
+        <inputVariables name="InitCompleted" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <inputVariables name="AutomaticExecuteCompleted" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <inputVariables name="SoftwareEmergency" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <inputVariables name="EmergencyHandled" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <inputVariables name="SFCReset" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <comment identifier="Crane">
+          <statements>//Hardware</statements>
+          <statements>//Software</statements>
+          <statements>//Only for SFC implementation</statements>
+        </comment>
+        <internalVariables name="CraneSpeed" scope="VAR" type="INT" typeName="INT">
+          <location type="Q" dataType="None"/>
+        </internalVariables>
+        <internalVariables name="Timer" scope="VAR" type="DERIVED" typeName="TON">
+          <location/>
+        </internalVariables>
+        <internalVariables name="Check_Stack_WPProvided" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <internalVariables name="Check_Stack_WPType_Black" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <internalVariables name="SFCInit" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <outputVariables name="WPPickedUp" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="WPPutDown" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="ReachedStack" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="ReachedRamp" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="WPType_Black" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+      </declaration>
+      <implementations xsi:type="ST:StructuredText" label="Crane" id="_qdK5QL34EequD661lQoFzA" text="Check_Stack_WPProvided := Main.Stack_WPProvided;&#xA;Check_Stack_WPType_Black := Main.Stack_WPType_Black;">
+        <statements xsi:type="ST:Assignment" id="_qdK5Qr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="47" structuredText="_qdK5QL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Check_Stack_WPProvided"/>
+          <right xsi:type="STE:VariableExpression" id="_qdK5Qb34EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="Main">
+            <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack_WPProvided"/>
+          </right>
+        </statements>
+        <statements xsi:type="ST:Assignment" id="_qdK5RL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="51" structuredText="_qdK5QL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Check_Stack_WPType_Black"/>
+          <right xsi:type="STE:VariableExpression" id="_qdK5Q734EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="Main">
+            <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack_WPType_Black"/>
+          </right>
+        </statements>
+      </implementations>
+      <actions name="Reset_Timer">
+        <implementation xsi:type="ST:StructuredText" label="Reset_Timer" id="_qdGn0L34EequD661lQoFzA" text="Timer(IN:=FALSE);">
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdGn0r34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="16" structuredText="_qdGn0L34EequD661lQoFzA">
+            <functionCall expressionType="FUNCTION_CALL" symbol="Timer">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdGn0b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="IN"/>
+              </parameters>
+            </functionCall>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="Reset_Variables">
+        <implementation xsi:type="ST:StructuredText" label="Reset_Variables" id="_qdHO4L34EequD661lQoFzA" text="InitCompleted := FALSE;&#xA;AutomaticExecuteCompleted := FALSE;&#xA;&#xA;WPPickedUp := FALSE;&#xA;WPPutDown := FALSE;&#xA;ReachedStack := FALSE;&#xA;ReachedRamp := FALSE;&#x9;&#xA;WPType_Black := FALSE;">
+          <statements xsi:type="ST:Assignment" id="_qdHO4r34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="22" structuredText="_qdHO4L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="InitCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdHO4b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdHO5L34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="34" structuredText="_qdHO4L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="AutomaticExecuteCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdHO4734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdHO5r34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" endColumnPos="19" structuredText="_qdHO4L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="WPPickedUp"/>
+            <right xsi:type="STE:Literal" id="_qdHO5b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdHO6L34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="5" absEndLine="5" relStartLine="5" relEndLine="5" endColumnPos="18" structuredText="_qdHO4L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="WPPutDown"/>
+            <right xsi:type="STE:Literal" id="_qdHO5734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdHO6r34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="6" absEndLine="6" relStartLine="6" relEndLine="6" endColumnPos="21" structuredText="_qdHO4L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="ReachedStack"/>
+            <right xsi:type="STE:Literal" id="_qdHO6b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdHO7L34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="7" absEndLine="7" relStartLine="7" relEndLine="7" endColumnPos="20" structuredText="_qdHO4L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="ReachedRamp"/>
+            <right xsi:type="STE:Literal" id="_qdHO6734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdHO7r34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="8" absEndLine="8" relStartLine="8" relEndLine="8" endColumnPos="21" structuredText="_qdHO4L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="WPType_Black"/>
+            <right xsi:type="STE:Literal" id="_qdHO7b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="Set_Timer50ms">
+        <implementation xsi:type="ST:StructuredText" label="Set_Timer50ms" id="_qdH18L34EequD661lQoFzA" text="Timer(IN:=TRUE, PT:=T#50MS);">
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdH18734EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="27" structuredText="_qdH18L34EequD661lQoFzA">
+            <functionCall expressionType="FUNCTION_CALL" symbol="Timer">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdH18b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="IN"/>
+              </parameters>
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdH18r34EequD661lQoFzA" dataType="TIME" expressionType="LITERAL" symbol="T#50MS"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="PT"/>
+              </parameters>
+            </functionCall>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="Set_WPTypeEqualsStack">
+        <implementation xsi:type="ST:StructuredText" label="Set_WPTypeEqualsStack" id="_qdIdAL34EequD661lQoFzA" text="WPType_Black:=Main.Stack_WPType_Black;">
+          <statements xsi:type="ST:Assignment" id="_qdIdAr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="37" structuredText="_qdIdAL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="WPType_Black"/>
+            <right xsi:type="STE:VariableExpression" id="_qdIdAb34EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="Main">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack_WPType_Black"/>
+            </right>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="TurnClockwise_AND_Timer8000ms">
+        <implementation xsi:type="ST:StructuredText" label="TurnClockwise_AND_Timer8000ms" id="_qdJrIL34EequD661lQoFzA" text="Table.Motor.ACT_TurnClockwise();&#xA;Timer(IN:=TRUE, PT:=T#8000MS);">
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdJrIb34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="31" structuredText="_qdJrIL34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Table">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Motor"/>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_TurnClockwise"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdJrJL34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="29" structuredText="_qdJrIL34EequD661lQoFzA">
+            <functionCall expressionType="FUNCTION_CALL" symbol="Timer">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdJrIr34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="IN"/>
+              </parameters>
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdJrI734EequD661lQoFzA" dataType="TIME" expressionType="LITERAL" symbol="T#8000MS"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="PT"/>
+              </parameters>
+            </functionCall>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="TurnCounterclockwise_AND_Timer8000ms">
+        <implementation xsi:type="ST:StructuredText" label="TurnCounterclockwise_AND_Timer8000ms" id="_qdJrJb34EequD661lQoFzA" text="Table.Motor.ACT_TurnCounterclockwise();&#xA;Timer(IN:=TRUE, PT:=T#8000MS);">
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdJrJr34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="38" structuredText="_qdJrJb34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Table">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Motor"/>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_TurnCounterclockwise"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdJrKb34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="29" structuredText="_qdJrJb34EequD661lQoFzA">
+            <functionCall expressionType="FUNCTION_CALL" symbol="Timer">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdJrJ734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="IN"/>
+              </parameters>
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdJrKL34EequD661lQoFzA" dataType="TIME" expressionType="LITERAL" symbol="T#8000MS"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="PT"/>
+              </parameters>
+            </functionCall>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="TurnVacuumOn_AND_Timer2000ms">
+        <implementation xsi:type="ST:StructuredText" label="TurnVacuumOn_AND_Timer2000ms" id="_qdKSML34EequD661lQoFzA" text="Gripper.ACT_Intake();&#xA;Timer(IN:=TRUE, PT:=T#2000MS);">
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdKSMb34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="20" structuredText="_qdKSML34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Gripper"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_Intake"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdKSNL34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="29" structuredText="_qdKSML34EequD661lQoFzA">
+            <functionCall expressionType="FUNCTION_CALL" symbol="Timer">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdKSMr34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="IN"/>
+              </parameters>
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdKSM734EequD661lQoFzA" dataType="TIME" expressionType="LITERAL" symbol="T#2000MS"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="PT"/>
+              </parameters>
+            </functionCall>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="ACT_MoveToRamp">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_MoveToRamp">
+          <steps name="Init_MoveToRamp" outgoingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="DecideHowToMoveCrane" incomingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.1 //@resources.0/@pous.9/@actions.7/@implementation/@transitions.3" local_ID="3" stepLevel="1"/>
+          <steps name="Turn_CounterClockwise_MTC" incomingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.2" local_ID="7" stepLevel="2"/>
+          <steps name="First_Turn_CounterC" incomingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.3" outgoingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.4 //@resources.0/@pous.9/@actions.7/@implementation/@transitions.5" local_ID="12" stepLevel="2"/>
+          <steps name="Second_Turn_Clockwise" incomingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.5" outgoingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.6" local_ID="18" stepLevel="3"/>
+          <steps name="StopCrane" incomingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.2 //@resources.0/@pous.9/@actions.7/@implementation/@transitions.4 //@resources.0/@pous.9/@actions.7/@implementation/@transitions.6" outgoingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.7" local_ID="23" stepLevel="4"/>
+          <steps name="SetReachedRamp" incomingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.7" outgoingTransitions="//@resources.0/@pous.9/@actions.7/@implementation/@transitions.8" local_ID="26" stepLevel="5">
+            <actions xsi:type="SFC:SimpleAction" localId="27" qualifier="N" actionVariable="//@resources.0/@pous.9/@declaration/@outputVariables.3"/>
+          </steps>
+          <transitions condition="NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.0" targetStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="Table.AtStack.DI_SwitchTrue" sourceStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.1" targetStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.2" local_ID="6"/>
+          <transitions condition="Table.AtRamp.DI_SwitchTrue" sourceStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.2" targetStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.5" local_ID="9"/>
+          <transitions condition="NOT Table.AtStack.DI_SwitchTrue" sourceStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.1" targetStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.3" local_ID="11"/>
+          <transitions condition="Table.AtRamp.DI_SwitchTrue" sourceStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.3" targetStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.5" local_ID="15"/>
+          <transitions condition="Timer.Q AND Not Table.AtRamp.DI_SwitchTrue" sourceStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.3" targetStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.4" local_ID="17"/>
+          <transitions condition="Table.AtRamp.DI_SwitchTrue" sourceStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.4" targetStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.5" local_ID="20"/>
+          <transitions condition="Table.Motor.Stopped" sourceStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.5" targetStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.6" local_ID="25"/>
+          <transitions condition="ReachedRamp" isJump="true" sourceStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.6" targetStep="//@resources.0/@pous.9/@actions.7/@implementation/@steps.0" local_ID="30"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_MoveToStack">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_MoveToStack">
+          <steps name="Init_MoveToMagazine" outgoingTransitions="//@resources.0/@pous.9/@actions.8/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="Turn_Clockwise_MTM" incomingTransitions="//@resources.0/@pous.9/@actions.8/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.9/@actions.8/@implementation/@transitions.1 //@resources.0/@pous.9/@actions.8/@implementation/@transitions.2" local_ID="3" stepLevel="1"/>
+          <steps name="Turn_Counterclockwise" incomingTransitions="//@resources.0/@pous.9/@actions.8/@implementation/@transitions.2" outgoingTransitions="//@resources.0/@pous.9/@actions.8/@implementation/@transitions.3" local_ID="9" stepLevel="2"/>
+          <steps name="StopCrane" incomingTransitions="//@resources.0/@pous.9/@actions.8/@implementation/@transitions.1 //@resources.0/@pous.9/@actions.8/@implementation/@transitions.3" outgoingTransitions="//@resources.0/@pous.9/@actions.8/@implementation/@transitions.4" local_ID="13" stepLevel="3"/>
+          <steps name="SetReachedStack" incomingTransitions="//@resources.0/@pous.9/@actions.8/@implementation/@transitions.4" outgoingTransitions="//@resources.0/@pous.9/@actions.8/@implementation/@transitions.5" local_ID="16" stepLevel="4">
+            <actions xsi:type="SFC:SimpleAction" localId="17" qualifier="N" actionVariable="//@resources.0/@pous.9/@declaration/@outputVariables.2"/>
+          </steps>
+          <transitions condition="NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.0" targetStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="Table.AtStack.DI_SwitchTrue" sourceStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.1" targetStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.3" local_ID="6"/>
+          <transitions condition="Timer.Q" sourceStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.1" targetStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.2" local_ID="8"/>
+          <transitions condition="Table.AtStack.DI_SwitchTrue" sourceStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.2" targetStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.3" local_ID="11"/>
+          <transitions condition="Table.Motor.Stopped" sourceStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.3" targetStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.4" local_ID="15"/>
+          <transitions condition="ReachedStack" isJump="true" sourceStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.4" targetStep="//@resources.0/@pous.9/@actions.8/@implementation/@steps.0" local_ID="20"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_PickUpWP">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_PickUpWP">
+          <steps name="Init_PickUpWP" outgoingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="Crane_Down" incomingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.1" local_ID="3" stepLevel="1"/>
+          <steps name="SetWPType" incomingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.2" local_ID="6" stepLevel="2"/>
+          <steps name="WPType_Is_WPTypeStack" incomingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.2" outgoingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.3" local_ID="9" stepLevel="3"/>
+          <steps name="Turn_On_Vacuum_PWU" incomingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.3" outgoingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.4 //@resources.0/@pous.9/@actions.9/@implementation/@transitions.6" local_ID="12" stepLevel="4"/>
+          <steps name="Crane_Up" incomingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.4" outgoingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.5" local_ID="16" stepLevel="5"/>
+          <steps name="Error" incomingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.6" outgoingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.7" local_ID="21" stepLevel="5">
+            <actions xsi:type="SFC:SimpleAction" localId="22" qualifier="N" actionVariable="//@resources.0/@pous.9/@declaration/@inputVariables.5"/>
+          </steps>
+          <steps name="SetWPPickedUp" incomingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.5" outgoingTransitions="//@resources.0/@pous.9/@actions.9/@implementation/@transitions.8" local_ID="28" stepLevel="6">
+            <actions xsi:type="SFC:SimpleAction" localId="29" qualifier="N" actionVariable="//@resources.0/@pous.9/@declaration/@outputVariables.0"/>
+          </steps>
+          <transitions condition="NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.0" targetStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="LiftingCylinder.Extended" sourceStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.1" targetStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.2" local_ID="5"/>
+          <transitions condition="ReachedStack" sourceStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.2" targetStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.3" local_ID="8"/>
+          <transitions condition="TRUE" sourceStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.3" targetStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.4" local_ID="11"/>
+          <transitions condition="Gripper.Intaken" sourceStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.4" targetStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.5" local_ID="15"/>
+          <transitions condition="LiftingCylinder.Retracted" sourceStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.5" targetStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.7" local_ID="18"/>
+          <transitions condition="Timer.Q" sourceStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.4" targetStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.6" local_ID="20"/>
+          <transitions condition="SoftwareEmergency" isJump="true" sourceStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.6" targetStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.0" local_ID="25"/>
+          <transitions condition="WPPickedUp" isJump="true" sourceStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.7" targetStep="//@resources.0/@pous.9/@actions.9/@implementation/@steps.0" local_ID="32"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_PutDownWP">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_PutDownWP">
+          <steps name="Init_PutWPDown" outgoingTransitions="//@resources.0/@pous.9/@actions.10/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="Lower_Crane_PWD" incomingTransitions="//@resources.0/@pous.9/@actions.10/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.9/@actions.10/@implementation/@transitions.1" local_ID="3" stepLevel="1"/>
+          <steps name="Put_WP_Down_1" incomingTransitions="//@resources.0/@pous.9/@actions.10/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.9/@actions.10/@implementation/@transitions.2" local_ID="6" stepLevel="2"/>
+          <steps name="Crane_Up" incomingTransitions="//@resources.0/@pous.9/@actions.10/@implementation/@transitions.2" outgoingTransitions="//@resources.0/@pous.9/@actions.10/@implementation/@transitions.3" local_ID="9" stepLevel="3"/>
+          <steps name="SetWPPutDown" incomingTransitions="//@resources.0/@pous.9/@actions.10/@implementation/@transitions.3" outgoingTransitions="//@resources.0/@pous.9/@actions.10/@implementation/@transitions.4" local_ID="12" stepLevel="4">
+            <actions xsi:type="SFC:SimpleAction" localId="13" qualifier="N" actionVariable="//@resources.0/@pous.9/@declaration/@outputVariables.1"/>
+          </steps>
+          <transitions condition="NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.9/@actions.10/@implementation/@steps.0" targetStep="//@resources.0/@pous.9/@actions.10/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="LiftingCylinder.Extended" sourceStep="//@resources.0/@pous.9/@actions.10/@implementation/@steps.1" targetStep="//@resources.0/@pous.9/@actions.10/@implementation/@steps.2" local_ID="5"/>
+          <transitions condition="Gripper.Released" sourceStep="//@resources.0/@pous.9/@actions.10/@implementation/@steps.2" targetStep="//@resources.0/@pous.9/@actions.10/@implementation/@steps.3" local_ID="8"/>
+          <transitions condition="LiftingCylinder.Retracted" sourceStep="//@resources.0/@pous.9/@actions.10/@implementation/@steps.3" targetStep="//@resources.0/@pous.9/@actions.10/@implementation/@steps.4" local_ID="11"/>
+          <transitions condition="WPPutDown" isJump="true" sourceStep="//@resources.0/@pous.9/@actions.10/@implementation/@steps.4" targetStep="//@resources.0/@pous.9/@actions.10/@implementation/@steps.0" local_ID="16"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_AutomaticExecute">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_AutomaticExecute">
+          <steps name="ACT_AutomaticExecute_Init" outgoingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="Waiting_For_Stack_To_Provide_WP" incomingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.1" local_ID="3" stepLevel="1"/>
+          <steps name="Check_WP_Type" incomingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.2" local_ID="6" stepLevel="2"/>
+          <steps name="Crane_To_Stack_1" incomingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.2" outgoingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.3" local_ID="9" stepLevel="3"/>
+          <steps name="Pick_Up_WP_1" incomingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.3" outgoingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.4" local_ID="12" stepLevel="4"/>
+          <steps name="Crane_Turning_To_Ramp_1" incomingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.4" outgoingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.5" local_ID="15" stepLevel="5"/>
+          <steps name="Putting_Down_WP_1" incomingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.5" outgoingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.6" local_ID="18" stepLevel="6"/>
+          <steps name="Short_Delay" incomingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.6" outgoingTransitions="//@resources.0/@pous.9/@actions.11/@implementation/@transitions.7" local_ID="21" stepLevel="7"/>
+          <transitions condition="NOT AutomaticExecuteCompleted AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.0" targetStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="Check_Stack_WPProvided" sourceStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.1" targetStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.2" local_ID="5"/>
+          <transitions condition="Check_Stack_WPType_Black" sourceStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.2" targetStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.3" local_ID="8"/>
+          <transitions condition="ReachedStack" sourceStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.3" targetStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.4" local_ID="11"/>
+          <transitions condition="WPPickedUp" sourceStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.4" targetStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.5" local_ID="14"/>
+          <transitions condition="ReachedRamp" sourceStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.5" targetStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.6" local_ID="17"/>
+          <transitions condition="WPPutDown" sourceStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.6" targetStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.7" local_ID="20"/>
+          <transitions condition="Timer.Q" isJump="true" sourceStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.7" targetStep="//@resources.0/@pous.9/@actions.11/@implementation/@steps.1" local_ID="23"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_EmergencyStop">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_EmergencyStop">
+          <steps name="Crane_ACT_EmergencyStop_Init" outgoingTransitions="//@resources.0/@pous.9/@actions.12/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="ResetVariables" incomingTransitions="//@resources.0/@pous.9/@actions.12/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.9/@actions.12/@implementation/@transitions.1" local_ID="3" stepLevel="1"/>
+          <steps name="StopCrane" incomingTransitions="//@resources.0/@pous.9/@actions.12/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.9/@actions.12/@implementation/@transitions.2 //@resources.0/@pous.9/@actions.12/@implementation/@transitions.3" local_ID="6" stepLevel="2"/>
+          <steps name="Turn_Acuum_Off" incomingTransitions="//@resources.0/@pous.9/@actions.12/@implementation/@transitions.3" outgoingTransitions="//@resources.0/@pous.9/@actions.12/@implementation/@transitions.4" local_ID="12" stepLevel="3"/>
+          <steps name="Retract_LiftingCylinder" incomingTransitions="//@resources.0/@pous.9/@actions.12/@implementation/@transitions.2 //@resources.0/@pous.9/@actions.12/@implementation/@transitions.4" outgoingTransitions="//@resources.0/@pous.9/@actions.12/@implementation/@transitions.5" local_ID="16" stepLevel="4"/>
+          <steps name="Crane_EmergencyHandled" incomingTransitions="//@resources.0/@pous.9/@actions.12/@implementation/@transitions.5" outgoingTransitions="//@resources.0/@pous.9/@actions.12/@implementation/@transitions.6" local_ID="19" stepLevel="5">
+            <actions xsi:type="SFC:SimpleAction" localId="20" qualifier="N" actionVariable="//@resources.0/@pous.9/@declaration/@inputVariables.6"/>
+          </steps>
+          <transitions condition="Not EmergencyHandled AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.0" targetStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="NOT InitCompleted AND NOT AutomaticExecuteCompleted" sourceStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.1" targetStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.2" local_ID="5"/>
+          <transitions condition="Table.Motor.Stopped AND Gripper.Intaken" sourceStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.2" targetStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.4" local_ID="9"/>
+          <transitions condition="Table.Motor.Stopped AND NOT Gripper.Intaken" sourceStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.2" targetStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.3" local_ID="11"/>
+          <transitions condition="Gripper.Released" sourceStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.3" targetStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.4" local_ID="14"/>
+          <transitions condition="LiftingCylinder.Retracted" sourceStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.4" targetStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.5" local_ID="18"/>
+          <transitions condition="EmergencyHandled" isJump="true" sourceStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.5" targetStep="//@resources.0/@pous.9/@actions.12/@implementation/@steps.0" local_ID="23"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_Init">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_Init">
+          <steps name="Crane_ACT_Init" outgoingTransitions="//@resources.0/@pous.9/@actions.13/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="Crane_MoveUp_Init" incomingTransitions="//@resources.0/@pous.9/@actions.13/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.9/@actions.13/@implementation/@transitions.1 //@resources.0/@pous.9/@actions.13/@implementation/@transitions.2" local_ID="3" stepLevel="1"/>
+          <steps name="WPAllreadyPickedUp" incomingTransitions="//@resources.0/@pous.9/@actions.13/@implementation/@transitions.2" outgoingTransitions="//@resources.0/@pous.9/@actions.13/@implementation/@transitions.3" local_ID="9" stepLevel="2">
+            <actions xsi:type="SFC:SimpleAction" localId="10" qualifier="N" actionVariable="//@resources.0/@pous.9/@declaration/@outputVariables.0"/>
+          </steps>
+          <steps name="Turn_To_Ramp" incomingTransitions="//@resources.0/@pous.9/@actions.13/@implementation/@transitions.3" outgoingTransitions="//@resources.0/@pous.9/@actions.13/@implementation/@transitions.4" local_ID="14" stepLevel="3"/>
+          <steps name="Put_WP_On_Ramp_Init" incomingTransitions="//@resources.0/@pous.9/@actions.13/@implementation/@transitions.4" outgoingTransitions="//@resources.0/@pous.9/@actions.13/@implementation/@transitions.5" local_ID="17" stepLevel="4"/>
+          <steps name="SetInitCompleted" incomingTransitions="//@resources.0/@pous.9/@actions.13/@implementation/@transitions.1 //@resources.0/@pous.9/@actions.13/@implementation/@transitions.5" outgoingTransitions="//@resources.0/@pous.9/@actions.13/@implementation/@transitions.6" local_ID="21" stepLevel="5">
+            <actions xsi:type="SFC:SimpleAction" localId="22" qualifier="N" actionVariable="//@resources.0/@pous.9/@declaration/@inputVariables.3"/>
+          </steps>
+          <transitions condition="NOT InitCompleted AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.0" targetStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="LiftingCylinder.Retracted AND NOT Gripper.VacuumSwitch.DI_TakenIn" sourceStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.1" targetStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.5" local_ID="6"/>
+          <transitions condition="LiftingCylinder.Retracted AND Gripper.VacuumSwitch.DI_TakenIn" sourceStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.1" targetStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.2" local_ID="8"/>
+          <transitions condition="WPPickedUp" sourceStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.2" targetStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.3" local_ID="13"/>
+          <transitions condition="ReachedRamp" sourceStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.3" targetStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.4" local_ID="16"/>
+          <transitions condition="WPPutDown" sourceStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.4" targetStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.5" local_ID="19"/>
+          <transitions condition="InitCompleted" isJump="true" sourceStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.5" targetStep="//@resources.0/@pous.9/@actions.13/@implementation/@steps.0" local_ID="25"/>
+        </implementation>
+      </actions>
+    </pous>
+    <pous callees="//@resources.0/@pous.2 //@resources.0/@pous.4 //@resources.0/@pous.1" callers="//@resources.0/@pous.11" identifier="Stack" type="FUNCTIONBLOCK">
+      <declaration>
+        <inputVariables name="Seperator" scope="VAR_INPUT" type="DERIVED" typeName="MonostableCylinder">
+          <location/>
+        </inputVariables>
+        <inputVariables name="Panel" scope="VAR_INPUT" type="DERIVED" typeName="OperationPanel">
+          <location/>
+        </inputVariables>
+        <inputVariables name="WPAvailable" scope="VAR_INPUT" type="DERIVED" typeName="MicroSwitch">
+          <location/>
+        </inputVariables>
+        <inputVariables name="StartButton" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <inputVariables name="InitCompleted" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <inputVariables name="AutomaticExecuteCompleted" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <inputVariables name="EmergencyStop" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <inputVariables name="EmergencyHandled" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <inputVariables name="SFCReset" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <comment identifier="Stack">
+          <statements>//Hardware</statements>
+          <statements>//Software</statements>
+          <statements>//Only for SFC implementation</statements>
+        </comment>
+        <internalVariables name="Timer" scope="VAR" type="DERIVED" typeName="TON">
+          <location/>
+        </internalVariables>
+        <internalVariables name="Check_Crane_PickedUpWp" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <internalVariables name="SFCInit" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <outputVariables name="WPProvided" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="WPType_Black" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+      </declaration>
+      <implementations xsi:type="ST:StructuredText" label="Stack" id="_qdMHYL34EequD661lQoFzA" text="Panel();&#xA;StartButton := Panel.StartButton;&#xA;EmergencyStop := Panel.EmergencyStop;&#xA;Check_Crane_PickedUpWP := Main.Crane_PickedUpStackWP;">
+        <statements xsi:type="ST:FunctionCallStatement" id="_qdMHYb34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="7" structuredText="_qdMHYL34EequD661lQoFzA">
+          <functionCall expressionType="FUNCTION_CALL" symbol="Panel"/>
+        </statements>
+        <statements xsi:type="ST:Assignment" id="_qdMHY734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="32" structuredText="_qdMHYL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="StartButton"/>
+          <right xsi:type="STE:VariableExpression" id="_qdMHYr34EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="Panel">
+            <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="StartButton"/>
+          </right>
+        </statements>
+        <statements xsi:type="ST:Assignment" id="_qdMHZb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="3" absEndLine="3" relStartLine="3" relEndLine="3" endColumnPos="36" structuredText="_qdMHYL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyStop"/>
+          <right xsi:type="STE:VariableExpression" id="_qdMHZL34EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="Panel">
+            <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyStop"/>
+          </right>
+        </statements>
+        <statements xsi:type="ST:Assignment" id="_qdMHZ734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" endColumnPos="52" structuredText="_qdMHYL34EequD661lQoFzA">
+          <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Check_Crane_PickedUpWP"/>
+          <right xsi:type="STE:VariableExpression" id="_qdMHZr34EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="Main">
+            <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane_PickedUpStackWP"/>
+          </right>
+        </statements>
+      </implementations>
+      <actions name="Reset_Timer">
+        <implementation xsi:type="ST:StructuredText" label="Reset_Timer" id="_qdLgUL34EequD661lQoFzA" text="Timer(IN:=FALSE);">
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdLgUr34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="16" structuredText="_qdLgUL34EequD661lQoFzA">
+            <functionCall expressionType="FUNCTION_CALL" symbol="Timer">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdLgUb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="IN"/>
+              </parameters>
+            </functionCall>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="Reset_Variables">
+        <implementation xsi:type="ST:StructuredText" label="Reset_Variables" id="_qdLgU734EequD661lQoFzA" text="InitCompleted := FALSE;&#xA;AutomaticExecuteCompleted := FALSE;&#xA;&#xA;WPType_Black:=FALSE;">
+          <statements xsi:type="ST:Assignment" id="_qdLgVb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="22" structuredText="_qdLgU734EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="InitCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdLgVL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdLgV734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="34" structuredText="_qdLgU734EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="AutomaticExecuteCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdLgVr34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdLgWb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" endColumnPos="19" structuredText="_qdLgU734EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="WPType_Black"/>
+            <right xsi:type="STE:Literal" id="_qdLgWL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="Set_Timer250ms">
+        <implementation xsi:type="ST:StructuredText" label="Set_Timer250ms" id="_qdLgWr34EequD661lQoFzA" text="Timer(IN:=TRUE, PT:=T#250MS);">
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdLgXb34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="28" structuredText="_qdLgWr34EequD661lQoFzA">
+            <functionCall expressionType="FUNCTION_CALL" symbol="Timer">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdLgW734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="IN"/>
+              </parameters>
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdLgXL34EequD661lQoFzA" dataType="TIME" expressionType="LITERAL" symbol="T#250MS"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="PT"/>
+              </parameters>
+            </functionCall>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="Set_WPParameters_AND_WPProvided">
+        <implementation xsi:type="ST:StructuredText" label="Set_WPParameters_AND_WPProvided" id="_qdLgXr34EequD661lQoFzA" text="WPType_Black:=TRUE;&#xA;WPProvided:=TRUE;">
+          <statements xsi:type="ST:Assignment" id="_qdLgYL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="18" structuredText="_qdLgXr34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="WPType_Black"/>
+            <right xsi:type="STE:Literal" id="_qdLgX734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdLgYr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="16" structuredText="_qdLgXr34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="WPProvided"/>
+            <right xsi:type="STE:Literal" id="_qdLgYb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="ACT_ProvideWP">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_ProvideWP">
+          <steps name="ACT_ProvideWP_Init" outgoingTransitions="//@resources.0/@pous.10/@actions.4/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="Slider_Extend" incomingTransitions="//@resources.0/@pous.10/@actions.4/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.10/@actions.4/@implementation/@transitions.1" local_ID="3" stepLevel="1"/>
+          <steps name="WP_Ready" incomingTransitions="//@resources.0/@pous.10/@actions.4/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.10/@actions.4/@implementation/@transitions.2" local_ID="6" stepLevel="2">
+            <actions xsi:type="SFC:SimpleAction" localId="7" qualifier="R" actionVariable="//@resources.0/@pous.10/@declaration/@outputVariables.1"/>
+          </steps>
+          <steps name="Black" incomingTransitions="//@resources.0/@pous.10/@actions.4/@implementation/@transitions.2" outgoingTransitions="//@resources.0/@pous.10/@actions.4/@implementation/@transitions.3" local_ID="11" stepLevel="3">
+            <actions xsi:type="SFC:SimpleAction" localId="12" qualifier="S" actionVariable="//@resources.0/@pous.10/@declaration/@outputVariables.1"/>
+          </steps>
+          <steps name="WP_Provided" incomingTransitions="//@resources.0/@pous.10/@actions.4/@implementation/@transitions.3" outgoingTransitions="//@resources.0/@pous.10/@actions.4/@implementation/@transitions.4" local_ID="16" stepLevel="4">
+            <actions xsi:type="SFC:SimpleAction" localId="17" qualifier="S" actionVariable="//@resources.0/@pous.10/@declaration/@outputVariables.0"/>
+          </steps>
+          <transitions condition="NOT WPAvailable.DI_SwitchTrue AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.10/@actions.4/@implementation/@steps.0" targetStep="//@resources.0/@pous.10/@actions.4/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="Seperator.Extended AND WPAvailable.DI_SwitchTrue" sourceStep="//@resources.0/@pous.10/@actions.4/@implementation/@steps.1" targetStep="//@resources.0/@pous.10/@actions.4/@implementation/@steps.2" local_ID="5"/>
+          <transitions condition="TRUE" sourceStep="//@resources.0/@pous.10/@actions.4/@implementation/@steps.2" targetStep="//@resources.0/@pous.10/@actions.4/@implementation/@steps.3" local_ID="10"/>
+          <transitions condition="WPType_Black" sourceStep="//@resources.0/@pous.10/@actions.4/@implementation/@steps.3" targetStep="//@resources.0/@pous.10/@actions.4/@implementation/@steps.4" local_ID="15"/>
+          <transitions condition="WPProvided" isJump="true" sourceStep="//@resources.0/@pous.10/@actions.4/@implementation/@steps.4" targetStep="//@resources.0/@pous.10/@actions.4/@implementation/@steps.0" local_ID="20"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_AutomaticExecute">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_AutomaticExecute">
+          <steps name="ACT_AutomaticExecute_Init" outgoingTransitions="//@resources.0/@pous.10/@actions.5/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="Short_Delay" incomingTransitions="//@resources.0/@pous.10/@actions.5/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.10/@actions.5/@implementation/@transitions.1 //@resources.0/@pous.10/@actions.5/@implementation/@transitions.3" local_ID="3" stepLevel="1"/>
+          <steps name="Provide_WP" incomingTransitions="//@resources.0/@pous.10/@actions.5/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.10/@actions.5/@implementation/@transitions.2" local_ID="7" stepLevel="2"/>
+          <steps name="Dont_Provide_WP" incomingTransitions="//@resources.0/@pous.10/@actions.5/@implementation/@transitions.3" outgoingTransitions="//@resources.0/@pous.10/@actions.5/@implementation/@transitions.4" local_ID="12" stepLevel="2">
+            <actions xsi:type="SFC:SimpleAction" localId="13" qualifier="N" actionVariable="//@resources.0/@pous.10/@declaration/@outputVariables.0"/>
+          </steps>
+          <steps name="Waiting_For_Crane_To_Pick_Up" incomingTransitions="//@resources.0/@pous.10/@actions.5/@implementation/@transitions.2 //@resources.0/@pous.10/@actions.5/@implementation/@transitions.4" outgoingTransitions="//@resources.0/@pous.10/@actions.5/@implementation/@transitions.5" local_ID="18" stepLevel="3"/>
+          <steps name="Stack_Retracing" incomingTransitions="//@resources.0/@pous.10/@actions.5/@implementation/@transitions.5" outgoingTransitions="//@resources.0/@pous.10/@actions.5/@implementation/@transitions.6" local_ID="21" stepLevel="4">
+            <actions xsi:type="SFC:SimpleAction" localId="22" qualifier="R" actionVariable="//@resources.0/@pous.10/@declaration/@outputVariables.0"/>
+          </steps>
+          <transitions condition="NOT AutomaticExecuteCompleted AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.0" targetStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="Timer.Q AND NOT WPAvailable.DI_SwitchTrue" sourceStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.1" targetStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.2" local_ID="6"/>
+          <transitions condition="WPProvided" sourceStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.2" targetStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.4" local_ID="9"/>
+          <transitions condition="Timer.Q AND WPAvailable.DI_SwitchTrue" sourceStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.1" targetStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.3" local_ID="11"/>
+          <transitions condition="WPProvided" sourceStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.3" targetStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.4" local_ID="16"/>
+          <transitions condition="NOT WPAvailable.DI_SwitchTrue AND Check_Crane_PickedUpWP" sourceStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.4" targetStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.5" local_ID="20"/>
+          <transitions condition="Seperator.Retracted" isJump="true" sourceStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.5" targetStep="//@resources.0/@pous.10/@actions.5/@implementation/@steps.0" local_ID="25"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_EmergencyStop">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_EmergencyStop">
+          <steps name="Magazine_ACT_EmergencyStop_Init" outgoingTransitions="//@resources.0/@pous.10/@actions.6/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="ResetVariables" incomingTransitions="//@resources.0/@pous.10/@actions.6/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.10/@actions.6/@implementation/@transitions.1" local_ID="3" stepLevel="1"/>
+          <steps name="Stack_Retracting" incomingTransitions="//@resources.0/@pous.10/@actions.6/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.10/@actions.6/@implementation/@transitions.2" local_ID="6" stepLevel="2"/>
+          <steps name="Stack_EmergencyHandled" incomingTransitions="//@resources.0/@pous.10/@actions.6/@implementation/@transitions.2" outgoingTransitions="//@resources.0/@pous.10/@actions.6/@implementation/@transitions.3" local_ID="9" stepLevel="3">
+            <actions xsi:type="SFC:SimpleAction" localId="10" qualifier="N" actionVariable="//@resources.0/@pous.10/@declaration/@inputVariables.7"/>
+          </steps>
+          <transitions condition="Not EmergencyHandled AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.10/@actions.6/@implementation/@steps.0" targetStep="//@resources.0/@pous.10/@actions.6/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="NOT InitCompleted AND NOT AutomaticExecuteCompleted" sourceStep="//@resources.0/@pous.10/@actions.6/@implementation/@steps.1" targetStep="//@resources.0/@pous.10/@actions.6/@implementation/@steps.2" local_ID="5"/>
+          <transitions condition="Seperator.Retracted" sourceStep="//@resources.0/@pous.10/@actions.6/@implementation/@steps.2" targetStep="//@resources.0/@pous.10/@actions.6/@implementation/@steps.3" local_ID="8"/>
+          <transitions condition="EmergencyHandled" isJump="true" sourceStep="//@resources.0/@pous.10/@actions.6/@implementation/@steps.3" targetStep="//@resources.0/@pous.10/@actions.6/@implementation/@steps.0" local_ID="13"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_Init">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_Init">
+          <steps name="Stack_ACT_Init" outgoingTransitions="//@resources.0/@pous.10/@actions.7/@implementation/@transitions.0 //@resources.0/@pous.10/@actions.7/@implementation/@transitions.1" local_ID="0" initialStep="true"/>
+          <steps name="Set_WP_Parameters" incomingTransitions="//@resources.0/@pous.10/@actions.7/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.10/@actions.7/@implementation/@transitions.2" local_ID="6" stepLevel="1"/>
+          <steps name="Retract_Cylinder_Init" incomingTransitions="//@resources.0/@pous.10/@actions.7/@implementation/@transitions.0 //@resources.0/@pous.10/@actions.7/@implementation/@transitions.2" outgoingTransitions="//@resources.0/@pous.10/@actions.7/@implementation/@transitions.3" local_ID="10" stepLevel="2"/>
+          <steps name="SetInitCompleted" incomingTransitions="//@resources.0/@pous.10/@actions.7/@implementation/@transitions.3" outgoingTransitions="//@resources.0/@pous.10/@actions.7/@implementation/@transitions.4" local_ID="13" stepLevel="3">
+            <actions xsi:type="SFC:SimpleAction" localId="14" qualifier="N" actionVariable="//@resources.0/@pous.10/@declaration/@inputVariables.4"/>
+          </steps>
+          <transitions condition="NOT InitCompleted AND NOT WPAvailable.DI_SwitchTrue AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.10/@actions.7/@implementation/@steps.0" targetStep="//@resources.0/@pous.10/@actions.7/@implementation/@steps.2" local_ID="3"/>
+          <transitions condition="NOT InitCompleted AND WPAvailable.DI_SwitchTrue AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.10/@actions.7/@implementation/@steps.0" targetStep="//@resources.0/@pous.10/@actions.7/@implementation/@steps.1" local_ID="5"/>
+          <transitions condition="WPProvided" sourceStep="//@resources.0/@pous.10/@actions.7/@implementation/@steps.1" targetStep="//@resources.0/@pous.10/@actions.7/@implementation/@steps.2" local_ID="8"/>
+          <transitions condition="Seperator.Retracted" sourceStep="//@resources.0/@pous.10/@actions.7/@implementation/@steps.2" targetStep="//@resources.0/@pous.10/@actions.7/@implementation/@steps.3" local_ID="12"/>
+          <transitions condition="InitCompleted" isJump="true" sourceStep="//@resources.0/@pous.10/@actions.7/@implementation/@steps.3" targetStep="//@resources.0/@pous.10/@actions.7/@implementation/@steps.0" local_ID="17"/>
+        </implementation>
+      </actions>
+    </pous>
+    <pous callees="//@resources.0/@pous.10 //@resources.0/@pous.9" callers="//@resources.0/@pous.0" identifier="PPU" type="FUNCTIONBLOCK">
+      <declaration>
+        <inputVariables name="Stack" scope="VAR_INPUT" type="DERIVED" typeName="Stack">
+          <location/>
+        </inputVariables>
+        <inputVariables name="Crane" scope="VAR_INPUT" type="DERIVED" typeName="Crane">
+          <location/>
+        </inputVariables>
+        <inputVariables name="SFCReset" scope="VAR_INPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </inputVariables>
+        <comment identifier="PPU">
+          <statements>//Variables</statements>
+        </comment>
+        <comment identifier="PPU">
+          <statements>//Variables</statements>
+        </comment>
+        <comment identifier="PPU">
+          <statements>//Hardware</statements>
+          <statements>//Software</statements>
+          <statements>//Only for SFC implementation</statements>
+        </comment>
+        <internalVariables name="SFCInit" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <outputVariables name="StartButton" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="InitCompleted" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="AutomaticExecuteCompleted" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="EmergencyStop" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="EmergencyHandled" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="SFCResetResetCompleted" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+        <outputVariables name="SFCResetCompleted" scope="VAR_OUTPUT" type="BOOL" typeName="BOOL">
+          <location/>
+        </outputVariables>
+      </declaration>
+      <implementations xsi:type="SFC:SequentialFunctionChart" label="PPU">
+        <steps name="Init" outgoingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.0" local_ID="0" initialStep="true"/>
+        <steps name="SFC_Reset_Reset" incomingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.0" outgoingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.1" local_ID="3" stepLevel="1"/>
+        <steps name="Start" incomingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.1" outgoingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.2" local_ID="6" stepLevel="2"/>
+        <steps name="Initialisation_2" incomingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.2" outgoingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.3 //@resources.0/@pous.11/@implementations.0/@transitions.4" local_ID="9" stepLevel="3"/>
+        <steps name="AutomaticExecute" incomingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.3" outgoingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.5 //@resources.0/@pous.11/@implementations.0/@transitions.6" local_ID="17" stepLevel="4"/>
+        <steps name="Emergency_Stop" incomingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.5" outgoingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.7" local_ID="25" stepLevel="5"/>
+        <steps name="SFC_Reset" incomingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.7" outgoingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.8" local_ID="28" stepLevel="6"/>
+        <steps name="Ready_To_Initialise" incomingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.8" outgoingTransitions="//@resources.0/@pous.11/@implementations.0/@transitions.9" local_ID="31" stepLevel="7"/>
+        <transitions condition="TRUE" sourceStep="//@resources.0/@pous.11/@implementations.0/@steps.0" targetStep="//@resources.0/@pous.11/@implementations.0/@steps.1" local_ID="2"/>
+        <transitions condition="SFCResetResetCompleted" sourceStep="//@resources.0/@pous.11/@implementations.0/@steps.1" targetStep="//@resources.0/@pous.11/@implementations.0/@steps.2" local_ID="5"/>
+        <transitions condition="StartButton" sourceStep="//@resources.0/@pous.11/@implementations.0/@steps.2" targetStep="//@resources.0/@pous.11/@implementations.0/@steps.3" local_ID="8"/>
+        <transitions condition="InitCompleted" sourceStep="//@resources.0/@pous.11/@implementations.0/@steps.3" targetStep="//@resources.0/@pous.11/@implementations.0/@steps.4" local_ID="12"/>
+        <transitions condition="EmergencyStop" isJump="true" sourceStep="//@resources.0/@pous.11/@implementations.0/@steps.3" targetStep="//@resources.0/@pous.11/@implementations.0/@steps.5" local_ID="14"/>
+        <transitions condition="EmergencyStop" sourceStep="//@resources.0/@pous.11/@implementations.0/@steps.4" targetStep="//@resources.0/@pous.11/@implementations.0/@steps.5" local_ID="20"/>
+        <transitions condition="StartButton" isJump="true" sourceStep="//@resources.0/@pous.11/@implementations.0/@steps.4" targetStep="//@resources.0/@pous.11/@implementations.0/@steps.0" local_ID="22"/>
+        <transitions condition="EmergencyHandled" sourceStep="//@resources.0/@pous.11/@implementations.0/@steps.5" targetStep="//@resources.0/@pous.11/@implementations.0/@steps.6" local_ID="27"/>
+        <transitions condition="SFCResetCompleted" sourceStep="//@resources.0/@pous.11/@implementations.0/@steps.6" targetStep="//@resources.0/@pous.11/@implementations.0/@steps.7" local_ID="30"/>
+        <transitions condition="NOT EmergencyStop" isJump="true" sourceStep="//@resources.0/@pous.11/@implementations.0/@steps.7" targetStep="//@resources.0/@pous.11/@implementations.0/@steps.0" local_ID="33"/>
+      </implementations>
+      <actions name="ACT_CheckEmergency">
+        <implementation xsi:type="ST:StructuredText" label="ACT_CheckEmergency" id="_qdMucL34EequD661lQoFzA" text="EmergencyStop := Stack.EmergencyStop OR Crane.SoftwareEmergency;">
+          <statements xsi:type="ST:Assignment" id="_qdNVgb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="63" structuredText="_qdMucL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyStop"/>
+            <right xsi:type="STE:BinaryExpression" id="_qdNVgL34EequD661lQoFzA" operator="OR">
+              <left xsi:type="STE:VariableExpression" dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+                <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyStop"/>
+              </left>
+              <right xsi:type="STE:VariableExpression" dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+                <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="SoftwareEmergency"/>
+              </right>
+            </right>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="ACT_Start">
+        <implementation xsi:type="ST:StructuredText" label="ACT_Start" id="_qdNVgr34EequD661lQoFzA" text="StartButton := Stack.StartButton;">
+          <statements xsi:type="ST:Assignment" id="_qdNVhL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="32" structuredText="_qdNVgr34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="StartButton"/>
+            <right xsi:type="STE:VariableExpression" id="_qdNVg734EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="StartButton"/>
+            </right>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="AutomaticExecute_entry">
+        <implementation xsi:type="ST:StructuredText" label="AutomaticExecute_entry" id="_qdNVhb34EequD661lQoFzA" text="AutomaticExecuteCompleted:=FALSE;&#xA;&#xA;Stack.Panel.ACT_TurnLampWhite_Off();&#x9;&#xA;Stack.Panel.ACT_TurnLampGreen_On();">
+          <statements xsi:type="ST:Assignment" id="_qdNVh734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="32" structuredText="_qdNVhb34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="AutomaticExecuteCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdNVhr34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdNViL34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="3" absEndLine="3" relStartLine="3" relEndLine="3" endColumnPos="35" structuredText="_qdNVhb34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Panel"/>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_TurnLampWhite_Off"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdNVib34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" endColumnPos="34" structuredText="_qdNVhb34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Panel"/>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_TurnLampGreen_On"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="CallAll_AutomationExecutes">
+        <implementation xsi:type="ST:StructuredText" label="CallAll_AutomationExecutes" id="_qdN8kL34EequD661lQoFzA" text="EmergencyStop := Stack.EmergencyStop OR Crane.SoftwareEmergency;&#xA;StartButton := Stack.StartButton;&#xA;Crane.ACT_AutomaticExecute();&#xA;Stack.ACT_AutomaticExecute();">
+          <statements xsi:type="ST:Assignment" id="_qdN8kr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="63" structuredText="_qdN8kL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyStop"/>
+            <right xsi:type="STE:BinaryExpression" id="_qdN8kb34EequD661lQoFzA" operator="OR">
+              <left xsi:type="STE:VariableExpression" dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+                <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyStop"/>
+              </left>
+              <right xsi:type="STE:VariableExpression" dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+                <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="SoftwareEmergency"/>
+              </right>
+            </right>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdN8lL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="32" structuredText="_qdN8kL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="StartButton"/>
+            <right xsi:type="STE:VariableExpression" id="_qdN8k734EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="StartButton"/>
+            </right>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdN8lb34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="3" absEndLine="3" relStartLine="3" relEndLine="3" endColumnPos="28" structuredText="_qdN8kL34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_AutomaticExecute"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdN8lr34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" endColumnPos="28" structuredText="_qdN8kL34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_AutomaticExecute"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="EmergencyStop_entry">
+        <implementation xsi:type="ST:StructuredText" label="EmergencyStop_entry" id="_qdN8l734EequD661lQoFzA" text="EmergencyHandled:=FALSE;&#xA;&#xA;Stack.Panel.ACT_TurnLampWhite_Off();&#x9;&#xA;Stack.Panel.ACT_TurnLampGreen_Off();">
+          <statements xsi:type="ST:Assignment" id="_qdN8mb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="23" structuredText="_qdN8l734EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyHandled"/>
+            <right xsi:type="STE:Literal" id="_qdN8mL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdN8mr34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="3" absEndLine="3" relStartLine="3" relEndLine="3" endColumnPos="35" structuredText="_qdN8l734EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Panel"/>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_TurnLampWhite_Off"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdN8m734EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" endColumnPos="35" structuredText="_qdN8l734EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Panel"/>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_TurnLampGreen_Off"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="Init_entry">
+        <implementation xsi:type="ST:StructuredText" label="Init_entry" id="_qdN8nL34EequD661lQoFzA" text="InitCompleted:=FALSE;&#xA;&#xA;Stack.Panel.ACT_TurnLampWhite_On();&#x9;&#xA;Stack.Panel.ACT_TurnLampGreen_Off();">
+          <statements xsi:type="ST:Assignment" id="_qdN8nr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="20" structuredText="_qdN8nL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="InitCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdN8nb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdN8n734EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="3" absEndLine="3" relStartLine="3" relEndLine="3" endColumnPos="34" structuredText="_qdN8nL34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Panel"/>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_TurnLampWhite_On"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdN8oL34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" endColumnPos="35" structuredText="_qdN8nL34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Panel"/>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_TurnLampGreen_Off"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="Ready_To_Initialise_active">
+        <implementation xsi:type="ST:StructuredText" label="Ready_To_Initialise_active" id="_qdOjoL34EequD661lQoFzA" text="EmergencyStop := Stack.EmergencyStop OR Crane.SoftwareEmergency;&#xA;StartButton := Stack.StartButton;&#xA;IF(StartButton)THEN&#xA;&#x9;Crane.SoftwareEmergency:=FALSE;&#xA;END_IF">
+          <statements xsi:type="ST:Assignment" id="_qdOjor34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="63" structuredText="_qdOjoL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyStop"/>
+            <right xsi:type="STE:BinaryExpression" id="_qdOjob34EequD661lQoFzA" operator="OR">
+              <left xsi:type="STE:VariableExpression" dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+                <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyStop"/>
+              </left>
+              <right xsi:type="STE:VariableExpression" dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+                <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="SoftwareEmergency"/>
+              </right>
+            </right>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdOjpL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="32" structuredText="_qdOjoL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="StartButton"/>
+            <right xsi:type="STE:VariableExpression" id="_qdOjo734EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="StartButton"/>
+            </right>
+          </statements>
+          <statements xsi:type="ST:If" id="_qdPKtb34EequD661lQoFzA" statementType="IF" absStartLine="3" absEndLine="5" relStartLine="3" relEndLine="5" endColumnPos="5" structuredText="_qdOjoL34EequD661lQoFzA">
+            <conditionalBlocks id="_qdPKtL34EequD661lQoFzA" statementType="CONDITIONAL_BLOCK" absStartLine="3" absEndLine="4" relStartLine="3" relEndLine="4" endColumnPos="31" structuredText="_qdOjoL34EequD661lQoFzA" else="false">
+              <condition xsi:type="STE:UnaryExpression" id="_qdPKsb34EequD661lQoFzA" dataType="DERIVED" expressionType="UNARY" operator="PARENTHESIS">
+                <subexpression xsi:type="STE:VariableExpression" id="_qdPKsL34EequD661lQoFzA" dataType="DERIVED" expressionType="VARIABLE" Symbol="StartButton"/>
+              </condition>
+              <substatements xsi:type="ST:Assignment" id="_qdPKs734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" startColumnPos="1" endColumnPos="31" structuredText="_qdOjoL34EequD661lQoFzA">
+                <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+                  <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="SoftwareEmergency"/>
+                </left>
+                <right xsi:type="STE:Literal" id="_qdPKsr34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+              </substatements>
+            </conditionalBlocks>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="SFC_Reset_active">
+        <implementation xsi:type="ST:StructuredText" label="SFC_Reset_active" id="_qdQY0L34EequD661lQoFzA" text="(*PPU*)&#xA;&#x9;//Variables&#xA;&#x9;InitCompleted:=FALSE;&#xA;&#x9;AutomaticExecuteCompleted:=FALSE;&#x9;&#xA;&#xA;(*Crane Reset*)&#xA;&#x9;Crane(SFCReset:=TRUE);&#xA;&#x9;Crane.ACT_Init(SFCReset:=TRUE);&#xA;&#x9;Crane.ACT_AutomaticExecute(SFCReset:=TRUE);&#xA;&#x9;Crane.ACT_EmergencyStop(SFCReset:=TRUE);&#xA;&#x9;Crane.ACT_MoveToRamp(SFCReset:=TRUE);&#xA;&#x9;Crane.ACT_MoveToStack(SFCReset:=TRUE);&#xA;&#x9;Crane.ACT_PickUpWP(SFCReset:=TRUE);&#xA;&#x9;Crane.ACT_PutDownWP(SFCReset:=TRUE);&#xA;&#x9;&#xA;(*Stack Reset*)&#xA;&#x9;Stack(SFCReset:=TRUE);&#xA;&#x9;Stack.ACT_Init(SFCReset:=TRUE);&#xA;&#x9;Stack.ACT_AutomaticExecute(SFCReset:=TRUE);&#xA;&#x9;Stack.ACT_ProvideWP(SFCReset:=TRUE);&#xA;&#xA;SFCResetCompleted:=TRUE;">
+          <statements xsi:type="ST:Assignment" id="_qdQY0r34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="3" absEndLine="3" relStartLine="3" relEndLine="3" startColumnPos="1" endColumnPos="21" structuredText="_qdQY0L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="InitCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdQY0b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdQY1L34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" startColumnPos="1" endColumnPos="33" structuredText="_qdQY0L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="AutomaticExecuteCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdQY0734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY1r34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="7" absEndLine="7" relStartLine="7" relEndLine="7" startColumnPos="1" endColumnPos="22" structuredText="_qdQY0L34EequD661lQoFzA">
+            <functionCall expressionType="FUNCTION_CALL" symbol="Crane">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY1b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY2L34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="8" absEndLine="8" relStartLine="8" relEndLine="8" startColumnPos="1" endColumnPos="31" structuredText="_qdQY0L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_Init">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY1734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY2r34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="9" absEndLine="9" relStartLine="9" relEndLine="9" startColumnPos="1" endColumnPos="43" structuredText="_qdQY0L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_AutomaticExecute">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY2b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY3L34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="10" absEndLine="10" relStartLine="10" relEndLine="10" startColumnPos="1" endColumnPos="40" structuredText="_qdQY0L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_EmergencyStop">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY2734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY3r34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="11" absEndLine="11" relStartLine="11" relEndLine="11" startColumnPos="1" endColumnPos="37" structuredText="_qdQY0L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_MoveToRamp">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY3b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY4L34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="12" absEndLine="12" relStartLine="12" relEndLine="12" startColumnPos="1" endColumnPos="38" structuredText="_qdQY0L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_MoveToStack">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY3734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY4r34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="13" absEndLine="13" relStartLine="13" relEndLine="13" startColumnPos="1" endColumnPos="35" structuredText="_qdQY0L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_PickUpWP">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY4b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY5L34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="14" absEndLine="14" relStartLine="14" relEndLine="14" startColumnPos="1" endColumnPos="36" structuredText="_qdQY0L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_PutDownWP">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY4734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY5r34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="17" absEndLine="17" relStartLine="17" relEndLine="17" startColumnPos="1" endColumnPos="22" structuredText="_qdQY0L34EequD661lQoFzA">
+            <functionCall expressionType="FUNCTION_CALL" symbol="Stack">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY5b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY6L34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="18" absEndLine="18" relStartLine="18" relEndLine="18" startColumnPos="1" endColumnPos="31" structuredText="_qdQY0L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_Init">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY5734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY6r34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="19" absEndLine="19" relStartLine="19" relEndLine="19" startColumnPos="1" endColumnPos="43" structuredText="_qdQY0L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_AutomaticExecute">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY6b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdQY7L34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="20" absEndLine="20" relStartLine="20" relEndLine="20" startColumnPos="1" endColumnPos="36" structuredText="_qdQY0L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_ProvideWP">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdQY6734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdQY7r34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="22" absEndLine="22" relStartLine="22" relEndLine="22" endColumnPos="23" structuredText="_qdQY0L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCResetCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdQY7b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="SFC_Reset_entry">
+        <implementation xsi:type="ST:StructuredText" label="SFC_Reset_entry" id="_qdQY7734EequD661lQoFzA" text="SFCResetCompleted:=FALSE;&#xA;GVL.IsSFCResetting:=TRUE;">
+          <statements xsi:type="ST:Assignment" id="_qdQY8b34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="24" structuredText="_qdQY7734EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCResetCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdQY8L34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdQY8734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="24" structuredText="_qdQY7734EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="GVL">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="IsSFCResetting"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdQY8r34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="SFC_Reset_Reset_active">
+        <implementation xsi:type="ST:StructuredText" label="SFC_Reset_Reset_active" id="_qdRm8L34EequD661lQoFzA" text="(*Crane Reset*)&#x9;&#xA;&#x9;Crane(SFCReset:=FALSE);&#xA;&#x9;Crane.ACT_Init(SFCReset:=FALSE);&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;Crane.ACT_AutomaticExecute(SFCReset:=FALSE);&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;Crane.ACT_EmergencyStop(SFCReset:=FALSE);&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;Crane.ACT_MoveToRamp(SFCReset:=FALSE);&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;Crane.ACT_MoveToStack(SFCReset:=FALSE);&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;Crane.ACT_PickUpWP(SFCReset:=FALSE);&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;Crane.ACT_PutDownWP(SFCReset:=FALSE);&#xA;&#x9;Crane.LiftingCylinder.ACT_Retract();&#xA;&#x9;Crane.Gripper.ACT_Release();&#xA;&#x9;Crane.Table.Motor.ACT_Stop();&#x9;&#xA;&#x9;//Variables&#xA;&#x9;Crane.InitCompleted:=FALSE;&#xA;&#x9;Crane.AutomaticExecuteCompleted:=FALSE;&#xA;&#x9;Crane.SoftwareEmergency:=FALSE;&#xA;&#x9;Crane.EmergencyHandled:=FALSE;&#xA;&#x9;Crane.SFCReset:=FALSE;&#xA;&#x9;                                                            &#xA;(*Stack Reset*)   &#xA;&#x9;Stack(SFCReset:=FALSE);                                              &#xA;&#x9;Stack.ACT_Init(SFCReset:=FALSE);&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;Stack.ACT_AutomaticExecute(SFCReset:=FALSE);&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;Stack.ACT_ProvideWP(SFCReset:=FALSE);&#x9;&#xA;&#x9;Stack.Seperator.ACT_Retract();&#xA;&#x9;//Variables&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;Stack.InitCompleted:=FALSE;&#xA;&#x9;Stack.AutomaticExecuteCompleted:=FALSE;&#x9;&#xA;&#x9;Stack.EmergencyHandled:=FALSE;&#xA;&#x9;Stack.SFCReset:=FALSE;&#xA;                                                        &#xA;                                           &#xA;SFCResetResetCompleted:=TRUE;&#xA;SFCResetCompleted:=TRUE;">
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRm8r34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" startColumnPos="1" endColumnPos="23" structuredText="_qdRm8L34EequD661lQoFzA">
+            <functionCall expressionType="FUNCTION_CALL" symbol="Crane">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRm8b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRm9L34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="3" absEndLine="3" relStartLine="3" relEndLine="3" startColumnPos="1" endColumnPos="32" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_Init">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRm8734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRm9r34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="4" absEndLine="4" relStartLine="4" relEndLine="4" startColumnPos="1" endColumnPos="44" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_AutomaticExecute">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRm9b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRm-L34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="5" absEndLine="5" relStartLine="5" relEndLine="5" startColumnPos="1" endColumnPos="41" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_EmergencyStop">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRm9734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRm-r34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="6" absEndLine="6" relStartLine="6" relEndLine="6" startColumnPos="1" endColumnPos="38" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_MoveToRamp">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRm-b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRm_L34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="7" absEndLine="7" relStartLine="7" relEndLine="7" startColumnPos="1" endColumnPos="39" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_MoveToStack">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRm-734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRm_r34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="8" absEndLine="8" relStartLine="8" relEndLine="8" startColumnPos="1" endColumnPos="36" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_PickUpWP">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRm_b34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRnAL34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="9" absEndLine="9" relStartLine="9" relEndLine="9" startColumnPos="1" endColumnPos="37" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_PutDownWP">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRm_734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRnAb34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="10" absEndLine="10" relStartLine="10" relEndLine="10" startColumnPos="1" endColumnPos="36" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="LiftingCylinder"/>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_Retract"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRnAr34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="11" absEndLine="11" relStartLine="11" relEndLine="11" startColumnPos="1" endColumnPos="28" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Gripper"/>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_Release"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRnA734EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="12" absEndLine="12" relStartLine="12" relEndLine="12" startColumnPos="1" endColumnPos="29" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Table">
+                <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Motor"/>
+              </innerVariable>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_Stop"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnBb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="14" absEndLine="14" relStartLine="14" relEndLine="14" startColumnPos="1" endColumnPos="27" structuredText="_qdRm8L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="InitCompleted"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdRnBL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnB734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="15" absEndLine="15" relStartLine="15" relEndLine="15" startColumnPos="1" endColumnPos="39" structuredText="_qdRm8L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="AutomaticExecuteCompleted"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdRnBr34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnCb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="16" absEndLine="16" relStartLine="16" relEndLine="16" startColumnPos="1" endColumnPos="31" structuredText="_qdRm8L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="SoftwareEmergency"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdRnCL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnC734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="17" absEndLine="17" relStartLine="17" relEndLine="17" startColumnPos="1" endColumnPos="30" structuredText="_qdRm8L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyHandled"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdRnCr34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnDb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="18" absEndLine="18" relStartLine="18" relEndLine="18" startColumnPos="1" endColumnPos="22" structuredText="_qdRm8L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Crane">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdRnDL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRnD734EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="21" absEndLine="21" relStartLine="21" relEndLine="21" startColumnPos="1" endColumnPos="23" structuredText="_qdRm8L34EequD661lQoFzA">
+            <functionCall expressionType="FUNCTION_CALL" symbol="Stack">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRnDr34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRnEb34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="22" absEndLine="22" relStartLine="22" relEndLine="22" startColumnPos="1" endColumnPos="32" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_Init">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRnEL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRnE734EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="23" absEndLine="23" relStartLine="23" relEndLine="23" startColumnPos="1" endColumnPos="44" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_AutomaticExecute">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRnEr34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRnFb34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="24" absEndLine="24" relStartLine="24" relEndLine="24" startColumnPos="1" endColumnPos="37" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack"/>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_ProvideWP">
+              <parameters>
+                <assignedValue xsi:type="STE:Literal" id="_qdRnFL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+                <input dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+              </parameters>
+            </functionCall>
+          </statements>
+          <statements xsi:type="ST:FunctionCallStatement" id="_qdRnFr34EequD661lQoFzA" statementType="FUNCTION_CALL" absStartLine="25" absEndLine="25" relStartLine="25" relEndLine="25" startColumnPos="1" endColumnPos="30" structuredText="_qdRm8L34EequD661lQoFzA">
+            <invokingVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="Seperator"/>
+            </invokingVariable>
+            <functionCall expressionType="FUNCTION_CALL" symbol="ACT_Retract"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnGL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="27" absEndLine="27" relStartLine="27" relEndLine="27" startColumnPos="1" endColumnPos="27" structuredText="_qdRm8L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="InitCompleted"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdRnF734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnGr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="28" absEndLine="28" relStartLine="28" relEndLine="28" startColumnPos="1" endColumnPos="39" structuredText="_qdRm8L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="AutomaticExecuteCompleted"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdRnGb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnHL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="29" absEndLine="29" relStartLine="29" relEndLine="29" startColumnPos="1" endColumnPos="30" structuredText="_qdRm8L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="EmergencyHandled"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdRnG734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnHr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="30" absEndLine="30" relStartLine="30" relEndLine="30" startColumnPos="1" endColumnPos="22" structuredText="_qdRm8L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="Stack">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCReset"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdRnHb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnIL34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="33" absEndLine="33" relStartLine="33" relEndLine="33" endColumnPos="28" structuredText="_qdRm8L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCResetResetCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdRnH734EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnIr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="34" absEndLine="34" relStartLine="34" relEndLine="34" endColumnPos="23" structuredText="_qdRm8L34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCResetCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdRnIb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="SFC_Reset_Reset_entry">
+        <implementation xsi:type="ST:StructuredText" label="SFC_Reset_Reset_entry" id="_qdRnI734EequD661lQoFzA" text="SFCResetResetCompleted:=FALSE;&#xA;GVL.IsSFCResetting:=TRUE;">
+          <statements xsi:type="ST:Assignment" id="_qdRnJb34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="29" structuredText="_qdRnI734EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="SFCResetResetCompleted"/>
+            <right xsi:type="STE:Literal" id="_qdRnJL34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+          <statements xsi:type="ST:Assignment" id="_qdRnJ734EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" endColumnPos="24" structuredText="_qdRnI734EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="GVL">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="IsSFCResetting"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdRnJr34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="SFC_Reset_Reset_exit">
+        <implementation xsi:type="ST:StructuredText" label="SFC_Reset_Reset_exit" id="_qdSOAL34EequD661lQoFzA" text="GVL.IsSFCResetting:=FALSE;">
+          <statements xsi:type="ST:Assignment" id="_qdSOAr34EequD661lQoFzA" statementType="ASSIGNMENT" absStartLine="1" absEndLine="1" relStartLine="1" relEndLine="1" endColumnPos="25" structuredText="_qdSOAL34EequD661lQoFzA">
+            <left dataType="DERIVED" expressionType="VARIABLE" Symbol="GVL">
+              <innerVariable dataType="DERIVED" expressionType="VARIABLE" Symbol="IsSFCResetting"/>
+            </left>
+            <right xsi:type="STE:Literal" id="_qdSOAb34EequD661lQoFzA" dataType="BOOL" expressionType="LITERAL" symbol="FALSE"/>
+          </statements>
+        </implementation>
+      </actions>
+      <actions name="ACT_AutomaticExecute">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_AutomaticExecute">
+          <steps name="AutomaticExecute_Init" outgoingTransitions="//@resources.0/@pous.11/@actions.12/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="Call_All" incomingTransitions="//@resources.0/@pous.11/@actions.12/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.11/@actions.12/@implementation/@transitions.1" local_ID="3" stepLevel="1"/>
+          <transitions condition="Not AutomaticExecuteCompleted AND SFCResetCompleted AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.11/@actions.12/@implementation/@steps.0" targetStep="//@resources.0/@pous.11/@actions.12/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="AutomaticExecuteCompleted" isJump="true" sourceStep="//@resources.0/@pous.11/@actions.12/@implementation/@steps.1" targetStep="//@resources.0/@pous.11/@actions.12/@implementation/@steps.0" local_ID="5"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_EmergencyStop">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_EmergencyStop">
+          <steps name="EmergencyStop_Init" outgoingTransitions="//@resources.0/@pous.11/@actions.13/@implementation/@transitions.0" local_ID="0" initialStep="true"/>
+          <steps name="Stack_ES" incomingTransitions="//@resources.0/@pous.11/@actions.13/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.11/@actions.13/@implementation/@transitions.1" local_ID="3" stepLevel="1"/>
+          <steps name="Crane_ES" incomingTransitions="//@resources.0/@pous.11/@actions.13/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.11/@actions.13/@implementation/@transitions.2" local_ID="6" stepLevel="2"/>
+          <steps name="Emergency_Handled" incomingTransitions="//@resources.0/@pous.11/@actions.13/@implementation/@transitions.2" outgoingTransitions="//@resources.0/@pous.11/@actions.13/@implementation/@transitions.3" local_ID="9" stepLevel="3">
+            <actions xsi:type="SFC:SimpleAction" localId="10" qualifier="N" actionVariable="//@resources.0/@pous.11/@declaration/@outputVariables.4"/>
+          </steps>
+          <transitions condition="NOT EmergencyHandled AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.11/@actions.13/@implementation/@steps.0" targetStep="//@resources.0/@pous.11/@actions.13/@implementation/@steps.1" local_ID="2"/>
+          <transitions condition="Stack.EmergencyHandled" sourceStep="//@resources.0/@pous.11/@actions.13/@implementation/@steps.1" targetStep="//@resources.0/@pous.11/@actions.13/@implementation/@steps.2" local_ID="5"/>
+          <transitions condition="Crane.EmergencyHandled" sourceStep="//@resources.0/@pous.11/@actions.13/@implementation/@steps.2" targetStep="//@resources.0/@pous.11/@actions.13/@implementation/@steps.3" local_ID="8"/>
+          <transitions condition="EmergencyHandled" isJump="true" sourceStep="//@resources.0/@pous.11/@actions.13/@implementation/@steps.3" targetStep="//@resources.0/@pous.11/@actions.13/@implementation/@steps.0" local_ID="13"/>
+        </implementation>
+      </actions>
+      <actions name="ACT_Init">
+        <implementation xsi:type="SFC:SequentialFunctionChart" label="ACT_Init">
+          <steps name="Initialisation_Init" outgoingTransitions="//@resources.0/@pous.11/@actions.14/@implementation/@transitions.0" local_ID="0" initialStep="true">
+            <actions xsi:type="SFC:SimpleAction" localId="1" qualifier="R" actionVariable="//@resources.0/@pous.11/@declaration/@outputVariables.0"/>
+          </steps>
+          <steps name="Crane_Init" outgoingTransitions="//@resources.0/@pous.11/@actions.14/@implementation/@transitions.1" local_ID="6"/>
+          <steps name="Stack_Init" incomingTransitions="//@resources.0/@pous.11/@actions.14/@implementation/@transitions.1" outgoingTransitions="//@resources.0/@pous.11/@actions.14/@implementation/@transitions.2" local_ID="9"/>
+          <steps name="Init_Completed" incomingTransitions="//@resources.0/@pous.11/@actions.14/@implementation/@transitions.2" outgoingTransitions="//@resources.0/@pous.11/@actions.14/@implementation/@transitions.3" local_ID="12">
+            <actions xsi:type="SFC:SimpleAction" localId="13" qualifier="N" actionVariable="//@resources.0/@pous.11/@declaration/@outputVariables.1"/>
+          </steps>
+          <steps name="EmergencyChecking" incomingTransitions="//@resources.0/@pous.11/@actions.14/@implementation/@transitions.0" outgoingTransitions="//@resources.0/@pous.11/@actions.14/@implementation/@transitions.3" local_ID="15" stepLevel="1"/>
+          <transitions condition="NOT InitCompleted AND NOT GVL.IsSFCResetting" sourceStep="//@resources.0/@pous.11/@actions.14/@implementation/@steps.0" targetStep="//@resources.0/@pous.11/@actions.14/@implementation/@steps.4" local_ID="4"/>
+          <transitions condition="Crane.InitCompleted" sourceStep="//@resources.0/@pous.11/@actions.14/@implementation/@steps.1" targetStep="//@resources.0/@pous.11/@actions.14/@implementation/@steps.2" local_ID="8"/>
+          <transitions condition="Stack.InitCompleted" sourceStep="//@resources.0/@pous.11/@actions.14/@implementation/@steps.2" targetStep="//@resources.0/@pous.11/@actions.14/@implementation/@steps.3" local_ID="11"/>
+          <transitions condition="InitCompleted" isJump="true" sourceStep="//@resources.0/@pous.11/@actions.14/@implementation/@steps.3 //@resources.0/@pous.11/@actions.14/@implementation/@steps.4" targetStep="//@resources.0/@pous.11/@actions.14/@implementation/@steps.0" local_ID="18"/>
+        </implementation>
+      </actions>
+    </pous>
+    <tasks name="PlcTask" controlledPrograms="//@resources.0/@pous.0"/>
+  </resources>
+</C:Configuration>

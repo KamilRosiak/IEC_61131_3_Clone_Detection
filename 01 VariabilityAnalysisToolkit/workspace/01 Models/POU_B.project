@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<C:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:C="http://www.example.org/ppuIECScenario/config" xmlns:ST="http://www.example.org/ppuIECScenario/ST" xmlns:STE="http://www.example.org/ppuIECScenario/STE" identifier="Untitled1">
+  <resources name="Untitled1">
+    <pous identifier="POU">
+      <declaration>
+        <internalVariables name="A" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+        <internalVariables name="B" scope="VAR" type="BOOL" typeName="BOOL">
+          <location/>
+        </internalVariables>
+      </declaration>
+      <implementations xsi:type="ST:StructuredText" label="POU" id="_36SucLRwEeqxUKgsEzd_1Q" text="IF (A) THEN &#xA;&#x9;B := TRUE;&#xA;END_IF">
+        <statements xsi:type="ST:If" id="_36SudrRwEeqxUKgsEzd_1Q" statementType="IF" absStartLine="1" absEndLine="3" relStartLine="1" relEndLine="3" endColumnPos="5" structuredText="_36SucLRwEeqxUKgsEzd_1Q">
+          <conditionalBlocks id="_36SudbRwEeqxUKgsEzd_1Q" statementType="CONDITIONAL_BLOCK" absStartLine="1" absEndLine="2" relStartLine="1" relEndLine="2" endColumnPos="10" structuredText="_36SucLRwEeqxUKgsEzd_1Q" else="false">
+            <condition xsi:type="STE:UnaryExpression" id="_36SucrRwEeqxUKgsEzd_1Q" dataType="DERIVED" expressionType="UNARY" operator="PARENTHESIS">
+              <subexpression xsi:type="STE:VariableExpression" id="_36SucbRwEeqxUKgsEzd_1Q" dataType="DERIVED" expressionType="VARIABLE" Symbol="A"/>
+            </condition>
+            <substatements xsi:type="ST:Assignment" id="_36SudLRwEeqxUKgsEzd_1Q" statementType="ASSIGNMENT" absStartLine="2" absEndLine="2" relStartLine="2" relEndLine="2" startColumnPos="1" endColumnPos="10" structuredText="_36SucLRwEeqxUKgsEzd_1Q">
+              <left dataType="DERIVED" expressionType="VARIABLE" Symbol="B"/>
+              <right xsi:type="STE:Literal" id="_36Suc7RwEeqxUKgsEzd_1Q" dataType="BOOL" expressionType="LITERAL" symbol="TRUE"/>
+            </substatements>
+          </conditionalBlocks>
+        </statements>
+      </implementations>
+    </pous>
+  </resources>
+</C:Configuration>
