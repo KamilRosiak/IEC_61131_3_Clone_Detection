@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="Beckhoff Automation GmbH" productName="TwinCAT PLC Control" productVersion="3.5.10.30" creationDateTime="2019-09-26T11:42:34.782397" />
+  <contentHeader name="ST_FOR_AND_CASE_2" modificationDateTime="2019-09-26T11:42:34.7853953">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous />
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/application" handleUnknown="implementation">
+      <resource name="ST_Evolution_1">
+        <task name="PlcTask" interval="PT0S" priority="20">
+          <pouInstance name="MAIN" typeName="">
+            <documentation>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+            </documentation>
+          </pouInstance>
+          <addData>
+            <data name="http://www.3s-software.com/plcopenxml/tasksettings" handleUnknown="implementation">
+              <TaskSettings KindOfTask="Cyclic" Interval="10000" IntervalUnit="us">
+                <Watchdog Enabled="false" TimeUnit="ms" />
+              </TaskSettings>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+              <ObjectId>dc80b1be-3e6d-48e8-9a00-8e6a2da98843</ObjectId>
+            </data>
+          </addData>
+        </task>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <pou name="MAIN" pouType="program">
+              <interface>
+                <localVars>
+                  <variable name="Present">
+                    <type>
+                      <INT />
+                    </type>
+                  </variable>
+                  <variable name="Open">
+                    <type>
+                      <INT />
+                    </type>
+                  </variable>
+                  <variable name="Close">
+                    <type>
+                      <INT />
+                    </type>
+                  </variable>
+                  <variable name="Workpiece">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="SENSOR">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="Gate">
+                    <type>
+                      <INT />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">
+
+FOR counter:= 2 TO 5 BY 1 DO
+	CASE counter OF
+	1, 3:  
+		BOOL1 := TRUE;
+	2:     
+		BOOL2 := FALSE;
+	ELSE
+		BOOL1 := NOT BOOL1;
+	END_CASE;
+END_FOR;
+
+</xhtml>
+                </ST>
+              </body>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">PROGRAM MAIN
+VAR
+
+	Present: INT;
+	Open: INT;
+	Close: INT;
+	Workpiece: BOOL;
+	SENSOR: BOOL;
+	Gate: INT;
+END_VAR
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>d2ec95e7-f215-40be-86ae-3fd7660fc2f4</ObjectId>
+                </data>
+              </addData>
+            </pou>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/libraries" handleUnknown="implementation">
+            <Libraries>
+              <Library Name="#Tc2_Standard" Namespace="Tc2_Standard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Tc2_Standard, * (Beckhoff Automation GmbH)" />
+              <Library Name="#Tc2_System" Namespace="Tc2_System" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Tc2_System, * (Beckhoff Automation GmbH)">
+                <Parameters>
+                  <Parameter Name="TABLE_UPPER_BOUND" Value="15" />
+                  <Parameter Name="STRING_LENGTH_EXP" Value="255" />
+                  <Parameter Name="STRING_LENGTH_ADDRESS" Value="20" />
+                  <Parameter Name="STRING_LENGTH_COMMENT" Value="255" />
+                  <Parameter Name="STRING_LENGTH_OUTSTRING" Value="255" />
+                  <Parameter Name="TABLE_SHOW_VALID_ITEMS" Value="FALSE" />
+                </Parameters>
+              </Library>
+              <Library Name="#Tc3_Module" Namespace="Tc3_Module" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Tc3_Module, * (Beckhoff Automation GmbH)" />
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>6b6f9fc9-f4bc-48fb-81f5-a5317d80de89</ObjectId>
+                </data>
+              </addData>
+            </Libraries>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>21044292-956d-4b0a-9e12-e88890119145</ObjectId>
+          </data>
+        </addData>
+      </resource>
+    </data>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Object Name="ST_Evolution_1" ObjectId="21044292-956d-4b0a-9e12-e88890119145">
+          <Object Name="Bibliotheksverwalter" ObjectId="6b6f9fc9-f4bc-48fb-81f5-a5317d80de89" />
+          <Object Name="PlcTask" ObjectId="dc80b1be-3e6d-48e8-9a00-8e6a2da98843" />
+          <Folder Name="POUs">
+            <Object Name="MAIN" ObjectId="d2ec95e7-f215-40be-86ae-3fd7660fc2f4" />
+          </Folder>
+        </Object>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>
