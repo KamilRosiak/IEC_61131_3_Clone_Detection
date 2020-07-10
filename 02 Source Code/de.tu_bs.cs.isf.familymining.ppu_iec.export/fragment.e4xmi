@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_9_PggPupEeidSuIPM5aRvA">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_9VlZQGrAEeqo2IXWv08lpg" featurename="children" parentElementId="de.tu_bs.cs.isf.familymining.rcp_e4.parts.project_explorer.context_menu">
+    <elements xsi:type="menu:DirectMenuItem" xmi:id="_9VlZQWrAEeqo2IXWv08lpg" elementId="de.tu_bs.isf.familymining.ppu_iec.familymodel_plcopen_exporter.directmenuitem.toplcopenxml" label="To PLCOpenXml" iconURI="platform:/plugin/de.tu_bs.cs.isf.familymining.ppu_iec.core/icons/plcopen_icon.png" contributionURI="bundleclass://de.tu_bs.cs.isf.familymining.ppu_iec.exchange/de.tu_bs.isf.familymining.ppu_iec.export.handler.RightClickMenuHandler"/>
+  </fragments>
+</fragment:ModelFragments>

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Zest_graph
+Bundle-SymbolicName: de.tu_bs.cs.isf.familymining.rcp_e4.zest_graph;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: de.tu_bs.cs.isf.familymining.rcp_e4.zest_graph
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.gef.mvc.fx,
+ org.eclipse.gef.graph,
+ org.eclipse.gef.common
+Import-Package: com.google.inject;version="1.4.0"

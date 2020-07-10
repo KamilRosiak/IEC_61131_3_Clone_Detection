@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.tu_bs.cs.isf.familymining.rcp_e4.parser.IParserProcessInterface">
+      <interface
+            class="de.tu_bs.cs.isf.familymining.ppu_iec.parser.xml.processes.IECProjectConverter"
+            description="The process uses PPU-scenarios in an XML format to produce an instance of the &quot;Configuration&quot;-metamodel"
+            id="IECProjectConverter"
+            isDefault="true"
+            label="Entire Project Parser">
+      </interface>
+      <interface
+            class="de.tu_bs.cs.isf.familymining.ppu_iec.parser.xml.processes.IECSinglePOUConverter"
+            description="The process uses PPU-scenarios with a single POU in an XML format to produce an instance of the &quot;Configuration&quot;-metamodel."
+            id="IECSinglePOUConverter"
+            isDefault="false"
+            label="Single POU Parser">
+      </interface>
+   </extension>
+   <extension
+         point="de.tu_bs.cs.isf.familymining.rcp_e4.parser.INodeCallbackInterface">
+      <interface
+            class="de.tu_bs.cs.isf.familymining.ppu_iec.parser.xml.callbacks.PPUFillCallback"
+            description="The callback produces an instance of the &quot;Configuration&quot; meta model"
+            id="PPUFillCallback">
+      </interface>
+      <interface
+            class="de.tu_bs.cs.isf.familymining.ppu_iec.parser.xml.callbacks.IECSinglePOUCallback"
+            description="The callback produces an instance of the &quot;Configuration&quot; meta model for an exported single POU."
+            id="IECSinglePOUCallback">
+      </interface>
+   </extension>
+   <extension
+         point="de.tu_bs.cs.isf.familymining.rcp_e4.parser.IParserInterface">
+      <interface
+            class="de.tu_bs.cs.isf.familymining.ppu_iec.parser.xml.XmlParser"
+            description="The parser uses the XML DOM library. Every Node of the XML document is processed in depth-first order."
+            id="XmlParser">
+      </interface>
+   </extension>
+
+</plugin>

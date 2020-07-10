@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="structuredtextexpression" nsURI="http://www.example.org/ppuIECScenario/STE"
+    nsPrefix="STE">
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataType" eType="#//ElementaryDataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expressionType" eType="#//ExpressionType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ExpressionType">
+    <eLiterals name="BINARY"/>
+    <eLiterals name="UNARY" value="1"/>
+    <eLiterals name="LITERAL" value="2"/>
+    <eLiterals name="VARIABLE" value="3"/>
+    <eLiterals name="FUNCTION_CALL" value="4"/>
+    <eLiterals name="SUBRANGE" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//BinaryOperator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BinaryOperator">
+    <eLiterals name="UNDEFINED" literal="UNDEFINED"/>
+    <eLiterals name="ADD" value="1"/>
+    <eLiterals name="SUBTRACT" value="2"/>
+    <eLiterals name="MULT" value="3"/>
+    <eLiterals name="DIV" value="4"/>
+    <eLiterals name="MOD" value="5"/>
+    <eLiterals name="EXP" value="6"/>
+    <eLiterals name="LESSER_THAN" value="7"/>
+    <eLiterals name="LESSER_EQUAL" value="8"/>
+    <eLiterals name="GREATER_THAN" value="9"/>
+    <eLiterals name="GREATER_EQUAL" value="10"/>
+    <eLiterals name="EQUAL" value="11"/>
+    <eLiterals name="NOT_EQUAL" value="12"/>
+    <eLiterals name="AND" value="13"/>
+    <eLiterals name="OR" value="14"/>
+    <eLiterals name="XOR" value="15"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnaryOperator">
+    <eLiterals name="UNDEFINED"/>
+    <eLiterals name="NOT" value="1"/>
+    <eLiterals name="POSITIVE" value="2"/>
+    <eLiterals name="NEGATIVE" value="3"/>
+    <eLiterals name="PARENTHESIS" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subexpression" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//UnaryOperator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Literal" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arrayIndices" upperBound="-1"
+        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="innerVariable" eType="#//VariableExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionCallExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ElementaryDataType">
+    <eLiterals name="UNSET"/>
+    <eLiterals name="SINT" value="1"/>
+    <eLiterals name="INT" value="2"/>
+    <eLiterals name="DINT" value="3"/>
+    <eLiterals name="LINT" value="4"/>
+    <eLiterals name="USINT" value="5"/>
+    <eLiterals name="UINT" value="6"/>
+    <eLiterals name="UDINT" value="7"/>
+    <eLiterals name="REAL" value="8"/>
+    <eLiterals name="LREAL" value="9"/>
+    <eLiterals name="TIME" value="10"/>
+    <eLiterals name="DATE" value="11"/>
+    <eLiterals name="TIME_OF_DAY" value="12"/>
+    <eLiterals name="TOD" value="13"/>
+    <eLiterals name="DATE_AND_TIME" value="14"/>
+    <eLiterals name="STRING" value="15"/>
+    <eLiterals name="BYTE" value="16"/>
+    <eLiterals name="WORD" value="17"/>
+    <eLiterals name="DWORD" value="18"/>
+    <eLiterals name="LWORD" value="19"/>
+    <eLiterals name="WSTRING" value="20"/>
+    <eLiterals name="BOOL" value="21"/>
+    <eLiterals name="DERIVED" value="22"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignedValue" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input" eType="#//VariableExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Subrange" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" eType="#//Literal"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" eType="#//Literal"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+</ecore:EPackage>

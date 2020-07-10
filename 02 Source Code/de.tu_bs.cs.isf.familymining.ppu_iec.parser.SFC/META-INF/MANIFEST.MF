@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SFCParser
+Bundle-SymbolicName: de.tu_bs.cs.isf.familymining.ppu_iec.parser.SFC;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel,
+ de.tu_bs.cs.isf.familymining.rcp_e4.parser,
+ org.eclipse.emf.ecore
+Automatic-Module-Name: de.tu_bs.cs.isf.familymining.ppu_iec.parser.SFC
+Import-Package: de.tu_bs.cs.isf.familymining.ppu_iec.parser.xml.util

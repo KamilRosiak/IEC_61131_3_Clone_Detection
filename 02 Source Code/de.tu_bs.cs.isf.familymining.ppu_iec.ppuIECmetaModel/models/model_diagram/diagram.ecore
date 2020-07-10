@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="diagram" nsURI="http://www.example.org/ppuIECScenario/Diagram"
+    nsPrefix="D">
+  <eClassifiers xsi:type="ecore:EClass" name="Diagram" eSuperTypes="../model_LanguageElement/languageElement.ecore#//LanguageElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networks" lowerBound="1"
+        upperBound="-1" eType="#//Network" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DiagramType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Network">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkElements" upperBound="-1"
+        eType="#//DiagramElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="diagram" eType="#//Diagram"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputPorts" upperBound="-1"
+        eType="#//Port" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputPorts" upperBound="-1"
+        eType="#//Port" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceElements" upperBound="-1"
+        eType="#//DiagramElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetElements" upperBound="-1"
+        eType="#//DiagramElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="localId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attachedElement" eType="#//DiagramElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectedPorts" upperBound="-1"
+        eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Return" eSuperTypes="#//DiagramElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPOU" eType="ecore:EClass ../model_Configuration/configuration/configuration.ecore#//POU"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Jump" eSuperTypes="#//DiagramElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetNetwork" eType="#//Network"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jumpLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DiagramType">
+    <eLiterals name="LadderDiagram"/>
+    <eLiterals name="FunctionBlockDiagram"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FBPort" eSuperTypes="#//Port">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portVariable" eType="ecore:EClass ../model_ST/model_expression/StructuredTextExpression.ecore#//VariableExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="negated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignedValue" eType="ecore:EClass ../model_ST/model_expression/StructuredTextExpression.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+</ecore:EPackage>

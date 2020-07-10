@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mergedModel" nsURI="https://www.tu-braunschweig.de/isf/ppuIECScenario/MergedModel"
+    nsPrefix="MM">
+  <eClassifiers xsi:type="ecore:EClass" name="FamilyModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceVariant" lowerBound="1"
+        eType="ecore:EClass ../model_Configuration/configuration/configuration.ecore#//Configuration"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetVariant" lowerBound="1"
+        eType="ecore:EClass ../model_Configuration/configuration/configuration.ecore#//Configuration"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metric" lowerBound="1"
+        eType="ecore:EClass ../model_metric/comparisonMetric.ecore#//Metric" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comparedElements" lowerBound="1"
+        upperBound="-1" eType="#//ElementComparison" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementComparison">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceElement" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetElement" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="similarity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subElements" upperBound="-1"
+        eType="#//ElementComparison" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentElement" eType="#//ElementComparison"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variability" eType="#//VariabilityCategory"
+        defaultValueLiteral="UNDEFINED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VariabilityCategory">
+    <eLiterals name="MANDATORY"/>
+    <eLiterals name="ALTERNATIVE" value="1"/>
+    <eLiterals name="OPTIONAL" value="2"/>
+    <eLiterals name="UNDEFINED" value="3"/>
+  </eClassifiers>
+</ecore:EPackage>

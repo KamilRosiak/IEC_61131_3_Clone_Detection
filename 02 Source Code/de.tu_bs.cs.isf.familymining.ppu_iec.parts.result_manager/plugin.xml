@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="de.tu_bs.cs.isf.familymining.ppu_iec.parts.result_manager.fragment"
+         point="org.eclipse.e4.workbench.model">
+      <fragment
+            apply="notexists"
+            uri="fragment.e4xmi">
+      </fragment>
+   </extension>
+   <extension
+         point="de.tu_bs.cs.isf.familymining.rcp_e4.parts.project_explorer.ProjectExplorerFileExtension">
+      <project_explorer_file_attr
+            file_extension="result"
+            project_explorer_file_attr="de.tu_bs.cs.isf.familymining.ppu_iec.parts.result_manager.contribution.project_explorer.ResultFileExtension">
+      </project_explorer_file_attr>
+   </extension>
+
+</plugin>

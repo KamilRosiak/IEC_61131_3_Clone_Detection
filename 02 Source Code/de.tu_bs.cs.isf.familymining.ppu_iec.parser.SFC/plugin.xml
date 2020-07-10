@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.tu_bs.cs.isf.familymining.rcp_e4.parser.INodeCallbackInterface">
+      <interface
+            class="de.tu_bs.cs.isf.familymining.ppu_iec.parser.SFC.impl.SFCNodeCallback"
+            description="At this point incompatible"
+            id="SFCNodeCallback">
+      </interface>
+   </extension>
+
+</plugin>

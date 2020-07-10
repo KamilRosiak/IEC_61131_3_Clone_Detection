@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="solution">
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationResultRoot">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceModel" lowerBound="1"
+        eType="ecore:EClass ../../../de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel/models/model_Configuration/configuration/configuration.ecore#//Configuration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetModel" lowerBound="1"
+        eType="ecore:EClass ../../../de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel/models/model_Configuration/configuration/configuration.ecore#//Configuration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="similarity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractcontainer" upperBound="-1"
+        eType="#//AbstractContainer" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractContainer" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="first" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="second" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="similarity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractresultelement"
+        upperBound="-1" eType="#//AbstractResultElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractResultElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="first" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="second" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="similarity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
+  </eClassifiers>
+</ecore:EPackage>

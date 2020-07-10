@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sequentialfunctionchart" nsURI="http://www.example.org/ppuIECScenario/SFC"
+    nsPrefix="SFC">
+  <eClassifiers xsi:type="ecore:EClass" name="Step">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isActive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//AbstractAction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedVariable" upperBound="-1"
+        eType="ecore:EClass ../model_Configuration/configuration/configuration.ecore#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransitions" upperBound="-1"
+        eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions" upperBound="-1"
+        eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="local_ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifier" lowerBound="1"
+        eType="#//StepQualifier" defaultValueLiteral="UNDEFINED"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialStep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequentialFunctionChart" eSuperTypes="../model_LanguageElement/languageElement.ecore#//LanguageElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="steps" lowerBound="1" upperBound="-1"
+        eType="#//Step" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isJump" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceStep" lowerBound="1"
+        upperBound="-1" eType="#//Step"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetStep" lowerBound="1"
+        upperBound="-1" eType="#//Step"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="local_ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Type">
+    <eLiterals name="UNDEFINED"/>
+    <eLiterals name="ENTRY" value="1"/>
+    <eLiterals name="EXIT" value="2"/>
+    <eLiterals name="DO" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StepQualifier">
+    <eLiterals name="UNDEFINED"/>
+    <eLiterals name="R" value="1"/>
+    <eLiterals name="S" value="2"/>
+    <eLiterals name="L" value="3"/>
+    <eLiterals name="D" value="4"/>
+    <eLiterals name="P" value="5"/>
+    <eLiterals name="SD" value="6"/>
+    <eLiterals name="DS" value="7"/>
+    <eLiterals name="SL" value="8"/>
+    <eLiterals name="N" value="9"/>
+    <eLiterals name="P1" value="10"/>
+    <eLiterals name="P0" value="11"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractAction" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="localId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifier" lowerBound="1"
+        eType="#//StepQualifier" defaultValueLiteral="UNDEFINED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleAction" eSuperTypes="#//AbstractAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionVariable" eType="ecore:EClass ../model_Configuration/configuration/configuration.ecore#//Variable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexAction" eSuperTypes="#//AbstractAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pouAction" eType="ecore:EClass ../model_Configuration/configuration/configuration.ecore#//Action"/>
+  </eClassifiers>
+</ecore:EPackage>

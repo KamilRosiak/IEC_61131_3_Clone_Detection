@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.ppuIECAnalyticsView.fragment"
+         point="org.eclipse.e4.workbench.model">
+      <fragment
+            uri="fragment.e4xmi">
+      </fragment>
+   </extension>
+   <extension
+         point="de.tu_bs.cs.isf.familymining.rcp_e4.parts.project_explorer.ProjectExplorerFileExtension">
+      <project_explorer_file_attr
+            file_extension="project"
+            project_explorer_file_attr="de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.ppuiecanalyticsview.contribution.ConfigurationFileExtension">
+      </project_explorer_file_attr>
+   </extension>
+
+</plugin>

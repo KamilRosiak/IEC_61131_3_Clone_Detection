@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel/src-gen"
+    modelPluginID="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel" modelName="MergedModel"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../model_metric/comparisonMetric.genmodel#//comparisonMetric ../model_Configuration/configuration/configuration.genmodel#//configuration ../model_LanguageElement/languageElement.genmodel#//languageelement ../model_ST/model_expression/StructuredTextExpression.genmodel#//structuredtextexpression"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>mergedModel.ecore</foreignModel>
+  <genPackages prefix="MergedModel" basePackage="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel"
+      disposableProviderFactory="true" ecorePackage="mergedModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mergedModel.ecore#//VariabilityCategory">
+      <genEnumLiterals ecoreEnumLiteral="mergedModel.ecore#//VariabilityCategory/MANDATORY"/>
+      <genEnumLiterals ecoreEnumLiteral="mergedModel.ecore#//VariabilityCategory/ALTERNATIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="mergedModel.ecore#//VariabilityCategory/OPTIONAL"/>
+      <genEnumLiterals ecoreEnumLiteral="mergedModel.ecore#//VariabilityCategory/UNDEFINED"/>
+    </genEnums>
+    <genClasses ecoreClass="mergedModel.ecore#//FamilyModel">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference mergedModel.ecore#//FamilyModel/sourceVariant"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference mergedModel.ecore#//FamilyModel/targetVariant"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference mergedModel.ecore#//FamilyModel/metric"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference mergedModel.ecore#//FamilyModel/comparedElements"/>
+    </genClasses>
+    <genClasses ecoreClass="mergedModel.ecore#//ElementComparison">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference mergedModel.ecore#//ElementComparison/sourceElement"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference mergedModel.ecore#//ElementComparison/targetElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mergedModel.ecore#//ElementComparison/similarity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mergedModel.ecore#//ElementComparison/subElements"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference mergedModel.ecore#//ElementComparison/parentElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mergedModel.ecore#//ElementComparison/variability"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

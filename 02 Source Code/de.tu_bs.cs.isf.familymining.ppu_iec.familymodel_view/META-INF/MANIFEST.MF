@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.fam
+ ilymodel_view
+Bundle-SymbolicName: de.tu_bs.cs.isf.familymining.ppu_iec.familymodel_
+ view;singleton:=true
+Bundle-Name: Familymodel_view
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: javax.inject,
+ org.eclipse.jface,
+ org.eclipse.e4.ui.di,
+ org.eclipse.e4.ui.services,
+ org.eclipse.e4.core.di.annotations,
+ org.eclipse.e4.core.services,
+ org.eclipse.e4.ui.workbench,
+ de.tu_bs.cs.isf.familymining.rcp_e4.core,
+ de.tu_bs.cs.isf.familymining.ppu_iec.core,
+ de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel,
+ de.tu_bs.cs.isf.familymining.rcp_e4.core.compare;bundle-version="1.0.0",
+ de.tu_bs.cs.isf.familymining.rcp_e4.featuremodel.core,
+ de.tu_bs.cs.isf.familymining.rcp_e4.parts.project_explorer,
+ de.tu_bs.cs.isf.familymining.rcp_e4.featuremodel.model
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: javax.annotation;version="1.2.0"
+
+

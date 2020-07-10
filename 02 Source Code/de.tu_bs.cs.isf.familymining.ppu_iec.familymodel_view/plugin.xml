@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.familymodel_view.fragment"
+         point="org.eclipse.e4.workbench.model">
+      <fragment
+            uri="fragment.e4xmi">
+      </fragment>
+   </extension>
+   <extension
+         point="de.tu_bs.cs.isf.familymining.rcp_e4.parts.project_explorer.ProjectExplorerFileExtension">
+      <project_explorer_file_attr
+            file_extension="family"
+            project_explorer_file_attr="de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.familymodel_view.contribution.FamilyModelExtension">
+      </project_explorer_file_attr>
+      <project_explorer_file_attr
+            file_extension="familyXML"
+            project_explorer_file_attr="de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.familymodel_view.contribution.FamilyModelXMLExtension">
+      </project_explorer_file_attr>
+   </extension>
+
+</plugin>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel/src-gen"
+    modelPluginID="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel" modelName="Diagram"
+    rootExtendsInterface="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.interfaces.EObjectSerializable"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../model_LanguageElement/languageElement.genmodel#//languageelement ../model_Configuration/configuration/configuration.genmodel#//configuration ../model_ST/model_expression/StructuredTextExpression.genmodel#//structuredtextexpression"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>diagram.ecore</foreignModel>
+  <genPackages prefix="Diagram" basePackage="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel"
+      disposableProviderFactory="true" ecorePackage="diagram.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="diagram.ecore#//DiagramType">
+      <genEnumLiterals ecoreEnumLiteral="diagram.ecore#//DiagramType/LadderDiagram"/>
+      <genEnumLiterals ecoreEnumLiteral="diagram.ecore#//DiagramType/FunctionBlockDiagram"/>
+    </genEnums>
+    <genClasses ecoreClass="diagram.ecore#//Diagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagram.ecore#//Diagram/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagram.ecore#//Diagram/networks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagram.ecore#//Diagram/type"/>
+    </genClasses>
+    <genClasses ecoreClass="diagram.ecore#//Network">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagram.ecore#//Network/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagram.ecore#//Network/networkElements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagram.ecore#//Network/diagram"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="diagram.ecore#//DiagramElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagram.ecore#//DiagramElement/inputPorts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference diagram.ecore#//DiagramElement/outputPorts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagram.ecore#//DiagramElement/sourceElements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagram.ecore#//DiagramElement/targetElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagram.ecore#//DiagramElement/localId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagram.ecore#//DiagramElement/level"/>
+    </genClasses>
+    <genClasses ecoreClass="diagram.ecore#//Port">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagram.ecore#//Port/attachedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagram.ecore#//Port/connectedPorts"/>
+    </genClasses>
+    <genClasses ecoreClass="diagram.ecore#//Return">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagram.ecore#//Return/targetPOU"/>
+    </genClasses>
+    <genClasses ecoreClass="diagram.ecore#//Jump">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagram.ecore#//Jump/targetNetwork"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute diagram.ecore#//Jump/jumpLabel"/>
+    </genClasses>
+    <genClasses ecoreClass="diagram.ecore#//FBPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference diagram.ecore#//FBPort/portVariable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagram.ecore#//FBPort/negated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference diagram.ecore#//FBPort/assignedValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute diagram.ecore#//FBPort/connected"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

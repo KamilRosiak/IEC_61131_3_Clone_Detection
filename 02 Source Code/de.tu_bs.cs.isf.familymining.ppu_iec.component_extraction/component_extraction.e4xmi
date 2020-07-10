@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_340kAB2wEeqzUuMQncDD6w">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_5lzqQB2wEeqzUuMQncDD6w" featurename="children" parentElementId="de.tu_bs.cs.isf.familymining.rcp_e4.parts.project_explorer.context_menu" positionInList="">
+    <elements xsi:type="menu:DirectMenuItem" xmi:id="__DJcsB2wEeqzUuMQncDD6w" elementId="de.tu_bs.cs.isf.familymining.ppu_iec.component_extraction.directmenuitem.extraction" label="CompareProject" iconURI="platform:/plugin/de.tu_bs.cs.isf.familymining.ppu_iec.component_extraction/icons/reengineering_16.png" contributionURI="bundleclass://de.tu_bs.cs.isf.familymining.ppu_iec.component_extraction/de.tu_bs.cs.isf.familymining.ppu_iec.component_extraction.handler.CompareProject">
+      <visibleWhen xsi:type="ui:ImperativeExpression" xmi:id="_P6grUB3FEeqzUuMQncDD6w" contributionURI="bundleclass://de.tu_bs.cs.isf.familymining.ppu_iec.component_extraction/de.tu_bs.cs.isf.familymining.ppu_iec.component_extraction.handler.expression.ProjectSingleFileExp"/>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_7JBj8B3FEeqzUuMQncDD6w" featurename="children" parentElementId="de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.work_window">
+    <elements xsi:type="basic:Part" xmi:id="__Ms0wB3FEeqzUuMQncDD6w" elementId="de.tu_bs.cs.isf.familymining.ppu_iec.component_extraction.part.ProjectCompare" toBeRendered="false" contributionURI="bundleclass://de.tu_bs.cs.isf.familymining.ppu_iec.component_extraction/de.tu_bs.cs.isf.familymining.ppu_iec.component_extraction.ExtractionViewController" label="ProjectCompare" iconURI="platform:/plugin/de.tu_bs.cs.isf.familymining.ppu_iec.component_extraction/icons/reengineering_16.png" closeable="true"/>
+  </fragments>
+</fragment:ModelFragments>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_2zUmEIWtEeiCZPlEXUKaEQ">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_2zUmEYWtEeiCZPlEXUKaEQ" featurename="children" parentElementId="de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.work_window">
+    <elements xsi:type="basic:Part" xmi:id="_2zUmEoWtEeiCZPlEXUKaEQ" elementId="de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.part.ppuiecanalyticsview" visible="false" contributionURI="bundleclass://de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECAnalyticsView/de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.ppuiecanalyticsview.IECAnalyticsView" label="AnalyticsView" iconURI="platform:/plugin/de.tu_bs.cs.isf.familymining.rcp_e4.core/icons/Explorer_View/items/model16.png" closeable="true"/>
+  </fragments>
+</fragment:ModelFragments>

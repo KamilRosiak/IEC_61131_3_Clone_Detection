@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel/src-gen"
+    editDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.edit/src"
+    editorDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.editor/src-gen"
+    modelPluginID="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel" modelName="FunctionBlockDiagram"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.edit"
+    editorPluginID="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.editor" usedGenPackages="../model_Configuration/configuration/configuration.genmodel#//configuration ../model_diagram/diagram.genmodel#//diagram ../model_LanguageElement/languageElement.genmodel#//languageelement ../model_ST/StructuredText.genmodel#//structuredtext ../model_ST/model_expression/StructuredTextExpression.genmodel#//structuredtextexpression"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>FunctionBlockDiagram.ecore</foreignModel>
+  <genPackages prefix="FunctionBlockDiagram" basePackage="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel"
+      disposableProviderFactory="true" ecorePackage="FunctionBlockDiagram.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FunctionBlockDiagram.ecore#//FBDElementType">
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//FBDElementType/UNDEFINED"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//FBDElementType/FBD_POU"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//FBDElementType/STANDARD_FUNCTION"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//FBDElementType/STANDARD_FUNCTION_BLOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//FBDElementType/EXECUTION_BLOCK"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FunctionBlockDiagram.ecore#//StandardFunctionOperation">
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/TYPECHANGE_TO"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/TRUNC"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/BCD_TO"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/TO_BCD"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/DT_TO"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/TOD_TO"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/DATE_TO"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/TO_BOOL"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/BOOL_TO"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/STRING_TO"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/TO_STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/TIME_TO"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/ABS"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/SQRT"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/LN"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/LOG"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/EXP"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/SIN"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/COS"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/TAN"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/ASIN"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/ACOS"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/ATAN"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/MUL"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/SUB"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/MOD"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/EXPT"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/MOVE"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/SHL"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/SHR"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/ROR"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/ROL"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/XOR"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/NOT"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/SEL"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/MAX"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/MIN"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/LIMIT"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/MUX"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/GT"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/GE"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/EQ"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/LT"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/LE"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/NE"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/LEN"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/RIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/MID"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/CONCAT"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/INSERT"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/DELETE"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/REPLACE"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionOperation/FIND"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation">
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation/SR"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation/RS"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation/R_TRIG"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation/F_TRIG"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation/CTU"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation/CTD"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation/CTUD"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation/TP"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation/TON"/>
+      <genEnumLiterals ecoreEnumLiteral="FunctionBlockDiagram.ecore#//StandardFunctionBlockOperation/TOF"/>
+    </genEnums>
+    <genClasses ecoreClass="FunctionBlockDiagram.ecore#//FBDElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FunctionBlockDiagram.ecore#//FBDElement/FBDElementType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FunctionBlockDiagram.ecore#//FBDElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="FunctionBlockDiagram.ecore#//FBDPOU">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FunctionBlockDiagram.ecore#//FBDPOU/refPOU"/>
+    </genClasses>
+    <genClasses ecoreClass="FunctionBlockDiagram.ecore#//StandardFunction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FunctionBlockDiagram.ecore#//StandardFunction/functionOperation"/>
+    </genClasses>
+    <genClasses ecoreClass="FunctionBlockDiagram.ecore#//StandardFunctionBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FunctionBlockDiagram.ecore#//StandardFunctionBlock/functionBlockOperation"/>
+    </genClasses>
+    <genClasses ecoreClass="FunctionBlockDiagram.ecore#//ExecutionBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FunctionBlockDiagram.ecore#//ExecutionBlock/executionStatements"/>
+    </genClasses>
+    <genClasses ecoreClass="FunctionBlockDiagram.ecore#//FBDJump"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel/src-gen"
+    modelPluginID="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel" modelName="StructuredTextExpression"
+    rootExtendsInterface="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.interfaces.EObjectSerializable"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" rootImplementsInterface=""
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>StructuredTextExpression.ecore</foreignModel>
+  <genPackages prefix="StructuredTextExpression" basePackage="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel"
+      disposableProviderFactory="true" ecorePackage="StructuredTextExpression.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="StructuredTextExpression.ecore#//ExpressionType">
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ExpressionType/BINARY"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ExpressionType/UNARY"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ExpressionType/LITERAL"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ExpressionType/VARIABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ExpressionType/FUNCTION_CALL"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ExpressionType/SUBRANGE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="StructuredTextExpression.ecore#//BinaryOperator">
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/UNDEFINED"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/SUBTRACT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/MULT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/MOD"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/EXP"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/LESSER_THAN"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/LESSER_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/GREATER_THAN"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/GREATER_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/NOT_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//BinaryOperator/XOR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="StructuredTextExpression.ecore#//UnaryOperator">
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//UnaryOperator/UNDEFINED"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//UnaryOperator/NOT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//UnaryOperator/POSITIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//UnaryOperator/NEGATIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//UnaryOperator/PARENTHESIS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="StructuredTextExpression.ecore#//ElementaryDataType">
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/SINT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/DINT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/LINT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/USINT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/UINT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/UDINT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/REAL"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/LREAL"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/TIME"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/DATE"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/TIME_OF_DAY"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/TOD"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/DATE_AND_TIME"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/BYTE"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/WORD"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/DWORD"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/LWORD"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/WSTRING"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/BOOL"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredTextExpression.ecore#//ElementaryDataType/DERIVED"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="StructuredTextExpression.ecore#//Expression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredTextExpression.ecore#//Expression/dataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredTextExpression.ecore#//Expression/expressionType"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredTextExpression.ecore#//BinaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredTextExpression.ecore#//BinaryExpression/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredTextExpression.ecore#//BinaryExpression/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredTextExpression.ecore#//BinaryExpression/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredTextExpression.ecore#//UnaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredTextExpression.ecore#//UnaryExpression/subexpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredTextExpression.ecore#//UnaryExpression/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredTextExpression.ecore#//Literal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredTextExpression.ecore#//Literal/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredTextExpression.ecore#//VariableExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredTextExpression.ecore#//VariableExpression/Symbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredTextExpression.ecore#//VariableExpression/arrayIndices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredTextExpression.ecore#//VariableExpression/innerVariable"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredTextExpression.ecore#//FunctionCallExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredTextExpression.ecore#//FunctionCallExpression/symbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredTextExpression.ecore#//FunctionCallExpression/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredTextExpression.ecore#//Parameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredTextExpression.ecore#//Parameter/assignedValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StructuredTextExpression.ecore#//Parameter/input"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredTextExpression.ecore#//Subrange">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredTextExpression.ecore#//Subrange/lowerBound"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredTextExpression.ecore#//Subrange/upperBound"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredTextExpression.ecore#//Identifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredTextExpression.ecore#//Identifier/id"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

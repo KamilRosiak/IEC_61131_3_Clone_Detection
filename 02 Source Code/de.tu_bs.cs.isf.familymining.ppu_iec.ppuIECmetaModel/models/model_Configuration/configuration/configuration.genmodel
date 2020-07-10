@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel/src-gen"
+    editDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.edit/src-gen"
+    editorDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.editor/src-gen"
+    modelPluginID="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel" modelName="Configuration"
+    editPluginClass="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.configuration.provider.ConfigurationEditPlugin"
+    editorPluginClass="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.configuration.presentation.ConfigurationEditorPlugin"
+    rootExtendsInterface="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.interfaces.EObjectSerializable"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../model_LanguageElement/languageElement.genmodel#//languageelement ../../model_ST/model_expression/StructuredTextExpression.genmodel#//structuredtextexpression"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>configuration.ecore</foreignModel>
+  <modelPluginVariables></modelPluginVariables>
+  <genPackages prefix="Configuration" basePackage="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel"
+      disposableProviderFactory="true" ecorePackage="configuration.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="configuration.ecore#//VariableDeclaration">
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/VAR"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/VAR_EXTERNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/VAR_TEMP"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/VAR_INPUT"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/VAR_OUTPUT"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/VAR_IN_OUT"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/VAR_ACCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/VAR_GLOBAL"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/VAR_CONFIG"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/RETAIN"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/NON_RETAIN"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/CONSTANT"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableDeclaration/AT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="configuration.ecore#//AccessType">
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//AccessType/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//AccessType/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//AccessType/PRIVATE"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//AccessType/INTERNAL"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//AccessType/PROTECTED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="configuration.ecore#//VariableLocationType">
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableLocationType/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableLocationType/Q"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableLocationType/M"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableLocationType/I"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="configuration.ecore#//VariableLocationDataType">
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableLocationDataType/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableLocationDataType/X"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableLocationDataType/Unspecified"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableLocationDataType/B"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableLocationDataType/W"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableLocationDataType/D"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//VariableLocationDataType/L"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="configuration.ecore#//Standard_Operator">
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/LD"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/ST"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/S"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/R"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/XOR"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/SUB"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/MUL"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/GT"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/GE"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/EQ"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/NE"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/LE"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/LT"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/JMP"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/CAL"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/RET"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/BRACKET_CLOSE"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/SHL"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/INC"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/MIN"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/MAX"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/MUX"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/LIMIT"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/LEN"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/RIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/MID"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/CONCAT"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/INSERT"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/DELETE"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/REPLACE"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/FIND"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/MOD"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/SIN"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//Standard_Operator/COS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="configuration.ecore#//OrganizationType">
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//OrganizationType/PROGRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//OrganizationType/FUNCTION"/>
+      <genEnumLiterals ecoreEnumLiteral="configuration.ecore#//OrganizationType/FUNCTIONBLOCK"/>
+    </genEnums>
+    <genClasses ecoreClass="configuration.ecore#//Configuration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/resources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/accesspaths"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Configuration/globalVariables"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Configuration/identifier"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//Resource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Resource/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Resource/globalVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Resource/pous"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Resource/tasks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Resource/types"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Variable/scope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Variable/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Variable/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Variable/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Variable/array"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Variable/initialValue"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//AccessPath">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//AccessPath/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//AccessPath/type"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//POU">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//POU/controlTasks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//POU/declaration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//POU/callees"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//POU/callers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//POU/implementations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//POU/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//POU/returnType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//POU/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//POU/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Task/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Task/controlledPrograms"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Location/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Location/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//Declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Declaration/inputVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Declaration/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Declaration/inOutVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Declaration/internalVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Declaration/outputVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Declaration/types"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Action/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference configuration.ecore#//Action/implementation"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//Struct">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute configuration.ecore#//Struct/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//Struct/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="configuration.ecore#//ArrayVariable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//ArrayVariable/lowerBound"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configuration.ecore#//ArrayVariable/upperBound"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

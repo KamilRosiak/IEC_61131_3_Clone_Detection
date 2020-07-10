@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="functionblockdiagram" nsURI="http://www.example.org/ppuIECScenario/FunctionBlockDiagram"
+    nsPrefix="FBD">
+  <eClassifiers xsi:type="ecore:EClass" name="FBDElement" eSuperTypes="../model_diagram/diagram.ecore#//DiagramElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="FBDElementType" eType="#//FBDElementType"
+        defaultValueLiteral="UNDEFINED"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FBDElementType">
+    <eLiterals name="UNDEFINED"/>
+    <eLiterals name="FBD_POU" value="1"/>
+    <eLiterals name="STANDARD_FUNCTION" value="2"/>
+    <eLiterals name="STANDARD_FUNCTION_BLOCK" value="3"/>
+    <eLiterals name="EXECUTION_BLOCK" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FBDPOU" eSuperTypes="#//FBDElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refPOU" lowerBound="1"
+        eType="ecore:EClass ../model_Configuration/configuration/configuration.ecore#//POU"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StandardFunctionOperation">
+    <eLiterals name="UNSET"/>
+    <eLiterals name="TYPECHANGE_TO" value="1"/>
+    <eLiterals name="TRUNC" value="2"/>
+    <eLiterals name="BCD_TO" value="3"/>
+    <eLiterals name="TO_BCD" value="4"/>
+    <eLiterals name="DT_TO" value="5"/>
+    <eLiterals name="TOD_TO" value="6"/>
+    <eLiterals name="DATE_TO" value="7"/>
+    <eLiterals name="TO_BOOL" value="8"/>
+    <eLiterals name="BOOL_TO" value="9"/>
+    <eLiterals name="STRING_TO" value="10"/>
+    <eLiterals name="TO_STRING" value="11"/>
+    <eLiterals name="TIME_TO" value="12"/>
+    <eLiterals name="ABS" value="13"/>
+    <eLiterals name="SQRT" value="14"/>
+    <eLiterals name="LN" value="15"/>
+    <eLiterals name="LOG" value="16"/>
+    <eLiterals name="EXP" value="17"/>
+    <eLiterals name="SIN" value="18"/>
+    <eLiterals name="COS" value="19"/>
+    <eLiterals name="TAN" value="20"/>
+    <eLiterals name="ASIN" value="21"/>
+    <eLiterals name="ACOS" value="22"/>
+    <eLiterals name="ATAN" value="23"/>
+    <eLiterals name="ADD" value="24"/>
+    <eLiterals name="MUL" value="25"/>
+    <eLiterals name="SUB" value="26"/>
+    <eLiterals name="DIV" value="27"/>
+    <eLiterals name="MOD" value="28"/>
+    <eLiterals name="EXPT" value="29"/>
+    <eLiterals name="MOVE" value="30"/>
+    <eLiterals name="SHL" value="31"/>
+    <eLiterals name="SHR" value="32"/>
+    <eLiterals name="ROR" value="33"/>
+    <eLiterals name="ROL" value="34"/>
+    <eLiterals name="AND" value="35"/>
+    <eLiterals name="OR" value="36"/>
+    <eLiterals name="XOR" value="37"/>
+    <eLiterals name="NOT" value="38"/>
+    <eLiterals name="SEL" value="39"/>
+    <eLiterals name="MAX" value="40"/>
+    <eLiterals name="MIN" value="41"/>
+    <eLiterals name="LIMIT" value="42"/>
+    <eLiterals name="MUX" value="43"/>
+    <eLiterals name="GT" value="44"/>
+    <eLiterals name="GE" value="45"/>
+    <eLiterals name="EQ" value="46"/>
+    <eLiterals name="LT" value="47"/>
+    <eLiterals name="LE" value="48"/>
+    <eLiterals name="NE" value="49"/>
+    <eLiterals name="LEN" value="50"/>
+    <eLiterals name="LEFT" value="51"/>
+    <eLiterals name="RIGHT" value="52"/>
+    <eLiterals name="MID" value="53"/>
+    <eLiterals name="CONCAT" value="54"/>
+    <eLiterals name="INSERT" value="55"/>
+    <eLiterals name="DELETE" value="56"/>
+    <eLiterals name="REPLACE" value="57"/>
+    <eLiterals name="FIND" value="58"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardFunction" eSuperTypes="#//FBDElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionOperation" lowerBound="1"
+        eType="#//StandardFunctionOperation" defaultValueLiteral="UNSET"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardFunctionBlock" eSuperTypes="#//FBDElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionBlockOperation"
+        lowerBound="1" eType="#//StandardFunctionBlockOperation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StandardFunctionBlockOperation">
+    <eLiterals name="UNSET"/>
+    <eLiterals name="SR" value="1"/>
+    <eLiterals name="RS" value="2"/>
+    <eLiterals name="R_TRIG" value="3"/>
+    <eLiterals name="F_TRIG" value="4"/>
+    <eLiterals name="CTU" value="5"/>
+    <eLiterals name="CTD" value="6"/>
+    <eLiterals name="CTUD" value="7"/>
+    <eLiterals name="TP" value="8"/>
+    <eLiterals name="TON" value="9"/>
+    <eLiterals name="TOF" value="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionBlock" eSuperTypes="#//FBDElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executionStatements" eType="ecore:EClass ../model_ST/StructuredText.ecore#//StructuredText"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FBDJump" eSuperTypes="../model_diagram/diagram.ecore#//Jump #//FBDElement"/>
+</ecore:EPackage>

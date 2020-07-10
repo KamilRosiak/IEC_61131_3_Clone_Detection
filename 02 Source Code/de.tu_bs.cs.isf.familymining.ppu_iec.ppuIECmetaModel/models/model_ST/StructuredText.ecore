@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="structuredtext" nsURI="http://www.example.org/ppuIECScenario/ST"
+    nsPrefix="ST">
+  <eClassifiers xsi:type="ecore:EClass" name="StructuredText" eSuperTypes="../model_LanguageElement/languageElement.ecore#//LanguageElement model_expression/StructuredTextExpression.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" lowerBound="1"
+        upperBound="-1" eType="#//Statement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=" "/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true" eSuperTypes="model_expression/StructuredTextExpression.ecore#//Identifier">
+    <eOperations name="getText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="String[] lines = structuredText.getText().split(&quot;\\n&quot;);&#xA;String startLineString = lines[absStartLine-1];&#xA;String endLineString = lines[absEndLine-1];&#xA;&#xA;int startCharInText = 0;&#xA;for (int index = 0; index &lt; absStartLine-1; index++) {&#xA;&#x9;startCharInText += lines[index].length()+1;&#xA;}&#xA;startCharInText += startColumnPos;&#xA;&#xA;int endCharInText = 0;&#xA;for (int index = 0; index &lt; absEndLine-1; index++) {&#xA;&#x9;endCharInText += lines[index].length()+1;&#xA;}&#xA;endCharInText += endColumnPos+1;&#xA;&#xA;return structuredText.getText().substring(startCharInText, endCharInText).trim();"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statementType" eType="#//StatementType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="absStartLine" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="absEndLine" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relStartLine" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relEndLine" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startColumnPos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endColumnPos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structuredText" lowerBound="1"
+        eType="#//StructuredText"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StatementType">
+    <eLiterals name="UNDEFINED"/>
+    <eLiterals name="ASSIGNMENT" value="1"/>
+    <eLiterals name="IF" value="2"/>
+    <eLiterals name="CASE" value="3"/>
+    <eLiterals name="FUNCTION_CALL" value="4"/>
+    <eLiterals name="POU_CALL" value="5"/>
+    <eLiterals name="WHILE" value="6"/>
+    <eLiterals name="REPEAT" value="7"/>
+    <eLiterals name="FOR_LOOP" value="8"/>
+    <eLiterals name="CONDITIONAL_BLOCK" value="9"/>
+    <eLiterals name="CASE_BLOCK" value="10"/>
+    <eLiterals name="EXIT" value="11"/>
+    <eLiterals name="RETURN" value="12"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractPOUCall" abstract="true" eSuperTypes="../model_Configuration/configuration/configuration.ecore#//POU #//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" lowerBound="1" eType="ecore:EClass model_expression/StructuredTextExpression.ecore#//VariableExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="ecore:EClass model_expression/StructuredTextExpression.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalBlocks" upperBound="-1"
+        eType="#//ConditionalBlock" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalBlock" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+        eType="ecore:EClass model_expression/StructuredTextExpression.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="substatements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="else" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Case" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switch" lowerBound="1"
+        eType="ecore:EClass model_expression/StructuredTextExpression.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cases" upperBound="-1"
+        eType="#//CaseBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseStatements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CaseBlock" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caseExpressions" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass model_expression/StructuredTextExpression.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="substatements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionCallStatement" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invokingVariable" eType="ecore:EClass model_expression/StructuredTextExpression.ecore#//VariableExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionCall" lowerBound="1"
+        eType="ecore:EClass model_expression/StructuredTextExpression.ecore#//FunctionCallExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnboundedLoop" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="substatements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+        eType="ecore:EClass model_expression/StructuredTextExpression.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForLoop" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="substatements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="increment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="counter" lowerBound="1"
+        eType="ecore:EClass model_expression/StructuredTextExpression.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExitStatement" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReturnStatement" eSuperTypes="#//Statement"/>
+</ecore:EPackage>

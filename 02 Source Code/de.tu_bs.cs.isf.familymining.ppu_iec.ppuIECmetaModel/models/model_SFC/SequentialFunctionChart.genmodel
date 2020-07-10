@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel/src-gen"
+    editDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.edit/src"
+    editorDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.editor/src"
+    modelPluginID="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel" modelName="SequentialFunctionChart"
+    rootExtendsInterface="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.interfaces.EObjectSerializable"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.edit"
+    editorPluginID="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.editor" usedGenPackages="../model_Configuration/configuration/configuration.genmodel#//configuration ../model_LanguageElement/languageElement.genmodel#//languageelement ../model_ST/model_expression/StructuredTextExpression.genmodel#//structuredtextexpression"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SequentialFunctionChart.ecore</foreignModel>
+  <genPackages prefix="SequentialFunctionChart" basePackage="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel"
+      disposableProviderFactory="true" ecorePackage="SequentialFunctionChart.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SequentialFunctionChart.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//Type/UNDEFINED"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//Type/ENTRY"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//Type/EXIT"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//Type/DO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SequentialFunctionChart.ecore#//StepQualifier">
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/UNDEFINED"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/R"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/S"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/L"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/D"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/P"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/SD"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/DS"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/SL"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/N"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/P1"/>
+      <genEnumLiterals ecoreEnumLiteral="SequentialFunctionChart.ecore#//StepQualifier/P0"/>
+    </genEnums>
+    <genClasses ecoreClass="SequentialFunctionChart.ecore#//Step">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SequentialFunctionChart.ecore#//Step/isActive"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SequentialFunctionChart.ecore#//Step/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SequentialFunctionChart.ecore#//Step/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SequentialFunctionChart.ecore#//Step/linkedVariable"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference SequentialFunctionChart.ecore#//Step/incomingTransitions"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference SequentialFunctionChart.ecore#//Step/outgoingTransitions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SequentialFunctionChart.ecore#//Step/local_ID"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute SequentialFunctionChart.ecore#//Step/qualifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SequentialFunctionChart.ecore#//Step/initialStep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SequentialFunctionChart.ecore#//Step/stepLevel"/>
+    </genClasses>
+    <genClasses ecoreClass="SequentialFunctionChart.ecore#//SequentialFunctionChart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SequentialFunctionChart.ecore#//SequentialFunctionChart/steps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SequentialFunctionChart.ecore#//SequentialFunctionChart/transitions"/>
+    </genClasses>
+    <genClasses ecoreClass="SequentialFunctionChart.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SequentialFunctionChart.ecore#//Transition/condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SequentialFunctionChart.ecore#//Transition/isJump"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference SequentialFunctionChart.ecore#//Transition/sourceStep"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference SequentialFunctionChart.ecore#//Transition/targetStep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SequentialFunctionChart.ecore#//Transition/local_ID"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SequentialFunctionChart.ecore#//AbstractAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SequentialFunctionChart.ecore#//AbstractAction/localId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SequentialFunctionChart.ecore#//AbstractAction/qualifier"/>
+    </genClasses>
+    <genClasses ecoreClass="SequentialFunctionChart.ecore#//SimpleAction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SequentialFunctionChart.ecore#//SimpleAction/actionVariable"/>
+    </genClasses>
+    <genClasses ecoreClass="SequentialFunctionChart.ecore#//ComplexAction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SequentialFunctionChart.ecore#//ComplexAction/pouAction"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

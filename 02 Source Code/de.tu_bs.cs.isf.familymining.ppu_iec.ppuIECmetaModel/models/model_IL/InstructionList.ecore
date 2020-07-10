@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="instructionlist" nsURI="http://www.example.org/ppuIECScenario/IL"
+    nsPrefix="IL">
+  <eClassifiers xsi:type="ecore:EClass" name="InstructionList" eSuperTypes="../model_LanguageElement/languageElement.ecore#//LanguageElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="network" lowerBound="1"
+        upperBound="-1" eType="#//Network" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instruction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operator" lowerBound="1"
+        eType="#//Operator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operands" lowerBound="1"
+        upperBound="-1" eType="#//Operand" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nextInstruction" eType="#//Instruction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prevInstruction" eType="#//Instruction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum ../model_Configuration/configuration/configuration.ecore#//Standard_Operator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" eType="#//IL_Modifier"
+        defaultValueLiteral="UNSET"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functioncall" eType="#//FunctionCall"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operand">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nextOperand" eType="#//Operand"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prevOperand" eType="#//Operand"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IL_Modifier">
+    <eLiterals name="UNSET"/>
+    <eLiterals name="C" value="1"/>
+    <eLiterals name="N" value="2"/>
+    <eLiterals name="BRACKET_OPEN" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="../model_Configuration/configuration/configuration.ecore#//POU"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Network">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" lowerBound="1"
+        upperBound="-1" eType="#//Instruction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Jump" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetNetwork" lowerBound="1"
+        eType="#//Network"/>
+  </eClassifiers>
+</ecore:EPackage>

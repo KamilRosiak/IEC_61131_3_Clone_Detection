@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ladderdiagram" nsURI="http://www.example.org/ppuIECScenario/LadderDiagram"
+    nsPrefix="LD">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractTransitElement" abstract="true"
+      eSuperTypes="../model_diagram/diagram.ecore#//DiagramElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TransitElementType" eType="#//LLElementType"
+        defaultValueLiteral="UNDEFINED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LLElementType">
+    <eLiterals name="UNDEFINED"/>
+    <eLiterals name="LEFT_POWERRAIL" value="1"/>
+    <eLiterals name="CONTACT" value="2"/>
+    <eLiterals name="COIL" value="3"/>
+    <eLiterals name="RIGHT_POWERRAIL" value="5"/>
+    <eLiterals name="JUMP" value="5"/>
+    <eLiterals name="ABSTRACT_POU" value="6"/>
+    <eLiterals name="RETURN" value="7"/>
+    <eLiterals name="STANDARD_ELEMENT" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractLadderPou" abstract="true" interface="true"
+      eSuperTypes="../model_Configuration/configuration/configuration.ecore#//POU #//AbstractTransitElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LLElement" eSuperTypes="#//AbstractTransitElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//LLElementStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labeledVariable" eType="ecore:EClass ../model_ST/model_expression/StructuredTextExpression.ecore#//VariableExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LLElementStatus">
+    <eLiterals name="UNDEFINED"/>
+    <eLiterals name="NORMAL_OPEN" value="1"/>
+    <eLiterals name="NORMAL_CLOSE" value="2"/>
+    <eLiterals name="POSITIVE_TRANSITION" value="3"/>
+    <eLiterals name="NEGATIVE_TRANSITION" value="4"/>
+    <eLiterals name="SET" value="5"/>
+    <eLiterals name="RESET" value="6"/>
+    <eLiterals name="NEGATED" value="7"/>
+    <eLiterals name="POSITIVE" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LadderNetwork" eSuperTypes="../model_diagram/diagram.ecore#//Network">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftPowerRail" eType="#//LLElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightPowerRail" eType="#//LLElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LDJump" eSuperTypes="../model_diagram/diagram.ecore#//Jump #//LLElement"/>
+</ecore:EPackage>

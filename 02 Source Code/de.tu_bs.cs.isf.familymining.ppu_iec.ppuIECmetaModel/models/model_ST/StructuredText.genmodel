@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel/src-gen"
+    modelPluginID="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel" modelName="StructuredText"
+    rootExtendsInterface="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel.interfaces.EObjectSerializable"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../model_Configuration/configuration/configuration.genmodel#//configuration ../model_LanguageElement/languageElement.genmodel#//languageelement model_expression/StructuredTextExpression.genmodel#//structuredtextexpression"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>StructuredText.ecore</foreignModel>
+  <genPackages prefix="StructuredText" basePackage="de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECmetaModel"
+      disposableProviderFactory="true" ecorePackage="StructuredText.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="StructuredText.ecore#//StatementType">
+      <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//StatementType/UNDEFINED"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//StatementType/ASSIGNMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//StatementType/IF"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//StatementType/CASE"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//StatementType/FUNCTION_CALL"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//StatementType/POU_CALL"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//StatementType/WHILE"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//StatementType/REPEAT"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//StatementType/FOR_LOOP"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//StatementType/CONDITIONAL_BLOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//StatementType/CASE_BLOCK"/>
+    </genEnums>
+    <genClasses ecoreClass="StructuredText.ecore#//StructuredText">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//StructuredText/statements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//StructuredText/text"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="StructuredText.ecore#//Statement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//Statement/statementType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//Statement/absStartLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//Statement/absEndLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//Statement/relStartLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//Statement/relEndLine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//Statement/startColumnPos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//Statement/endColumnPos"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StructuredText.ecore#//Statement/structuredText"/>
+      <genOperations ecoreOperation="StructuredText.ecore#//Statement/getText" body="String[] lines = structuredText.getText().split(&quot;\\n&quot;);&#xA;String startLineString = lines[absStartLine-1];&#xA;String endLineString = lines[absEndLine-1];&#xA;&#xA;int startCharInText = 0;&#xA;for (int index = 0; index &lt; absStartLine-1; index++) {&#xA;&#x9;startCharInText += lines[index].length()+1;&#xA;}&#xA;startCharInText += startColumnPos;&#xA;&#xA;int endCharInText = 0;&#xA;for (int index = 0; index &lt; absEndLine-1; index++) {&#xA;&#x9;endCharInText += lines[index].length()+1;&#xA;}&#xA;endCharInText += endColumnPos+1;&#xA;&#xA;return structuredText.getText().substring(startCharInText, endCharInText).trim();"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="StructuredText.ecore#//AbstractPOUCall"/>
+    <genClasses ecoreClass="StructuredText.ecore#//Assignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//Assignment/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//Assignment/right"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredText.ecore#//If">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//If/conditionalBlocks"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredText.ecore#//ConditionalBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//ConditionalBlock/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//ConditionalBlock/substatements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//ConditionalBlock/else"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredText.ecore#//Case">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//Case/switch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//Case/cases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//Case/elseStatements"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredText.ecore#//CaseBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//CaseBlock/caseExpressions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//CaseBlock/substatements"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredText.ecore#//FunctionCallStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//FunctionCallStatement/invokingVariable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//FunctionCallStatement/functionCall"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredText.ecore#//UnboundedLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//UnboundedLoop/substatements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//UnboundedLoop/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="StructuredText.ecore#//ForLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//ForLoop/substatements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//ForLoop/initialValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//ForLoop/upperBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//ForLoop/increment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//ForLoop/counter"/>
+    </genClasses>
+    <nestedGenPackages prefix="Structuredtext" disposableProviderFactory="true" ecorePackage="StructuredText.ecore#//structuredtext">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="StructuredText.ecore#//structuredtext/StatementType">
+        <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//structuredtext/StatementType/UNDEFINED"/>
+        <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//structuredtext/StatementType/ASSIGNMENT"/>
+        <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//structuredtext/StatementType/IF"/>
+        <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//structuredtext/StatementType/CASE"/>
+        <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//structuredtext/StatementType/FUNCTION_CALL"/>
+        <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//structuredtext/StatementType/POU_CALL"/>
+        <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//structuredtext/StatementType/WHILE"/>
+        <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//structuredtext/StatementType/REPEAT"/>
+        <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//structuredtext/StatementType/FOR_LOOP"/>
+        <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//structuredtext/StatementType/CONDITIONAL_BLOCK"/>
+        <genEnumLiterals ecoreEnumLiteral="StructuredText.ecore#//structuredtext/StatementType/CASE_BLOCK"/>
+      </genEnums>
+      <genClasses ecoreClass="StructuredText.ecore#//structuredtext/StructuredText">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/StructuredText/statements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/StructuredText/text"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="StructuredText.ecore#//structuredtext/Statement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/Statement/statementType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/Statement/absStartLine"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/Statement/absEndLine"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/Statement/relStartLine"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/Statement/relEndLine"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/Statement/startColumnPos"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/Statement/endColumnPos"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/Statement/structuredText"/>
+        <genOperations ecoreOperation="StructuredText.ecore#//structuredtext/Statement/getText"
+            body="String[] lines = structuredText.getText().split(&quot;\\n&quot;);&#xA;String startLineString = lines[absStartLine-1];&#xA;String endLineString = lines[absEndLine-1];&#xA;&#xA;int startCharInText = 0;&#xA;for (int index = 0; index &lt; absStartLine-1; index++) {&#xA;&#x9;startCharInText += lines[index].length()+1;&#xA;}&#xA;startCharInText += startColumnPos;&#xA;&#xA;int endCharInText = 0;&#xA;for (int index = 0; index &lt; absEndLine-1; index++) {&#xA;&#x9;endCharInText += lines[index].length()+1;&#xA;}&#xA;endCharInText += endColumnPos+1;&#xA;&#xA;return structuredText.getText().substring(startCharInText, endCharInText).trim();"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="StructuredText.ecore#//structuredtext/AbstractPOUCall"/>
+      <genClasses ecoreClass="StructuredText.ecore#//structuredtext/Assignment">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/Assignment/left"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/Assignment/right"/>
+      </genClasses>
+      <genClasses ecoreClass="StructuredText.ecore#//structuredtext/If">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/If/conditionalBlocks"/>
+      </genClasses>
+      <genClasses ecoreClass="StructuredText.ecore#//structuredtext/ConditionalBlock">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/ConditionalBlock/condition"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/ConditionalBlock/substatements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/ConditionalBlock/else"/>
+      </genClasses>
+      <genClasses ecoreClass="StructuredText.ecore#//structuredtext/Case">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/Case/switch"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/Case/cases"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/Case/elseStatements"/>
+      </genClasses>
+      <genClasses ecoreClass="StructuredText.ecore#//structuredtext/CaseBlock">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/CaseBlock/caseExpressions"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/CaseBlock/substatements"/>
+      </genClasses>
+      <genClasses ecoreClass="StructuredText.ecore#//structuredtext/FunctionCallStatement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/FunctionCallStatement/invokingVariable"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/FunctionCallStatement/functionCall"/>
+      </genClasses>
+      <genClasses ecoreClass="StructuredText.ecore#//structuredtext/UnboundedLoop">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/UnboundedLoop/substatements"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/UnboundedLoop/condition"/>
+      </genClasses>
+      <genClasses ecoreClass="StructuredText.ecore#//structuredtext/ForLoop">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/ForLoop/substatements"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/ForLoop/initialValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/ForLoop/upperBound"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StructuredText.ecore#//structuredtext/ForLoop/increment"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StructuredText.ecore#//structuredtext/ForLoop/counter"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

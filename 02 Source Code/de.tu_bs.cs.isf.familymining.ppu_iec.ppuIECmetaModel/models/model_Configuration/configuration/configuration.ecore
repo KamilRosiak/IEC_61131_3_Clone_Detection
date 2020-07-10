@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="configuration" nsURI="http://www.example.org/ppuIECScenario/config"
+    nsPrefix="C">
+  <eClassifiers xsi:type="ecore:EClass" name="Configuration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" lowerBound="1"
+        upperBound="-1" eType="#//Resource" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accesspaths" upperBound="-1"
+        eType="#//AccessPath" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalVariables" upperBound="-1"
+        eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Resource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalVariables" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pous" lowerBound="1" upperBound="-1"
+        eType="#//POU" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
+        eType="#//Task" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//Struct" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scope" eType="#//VariableDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EEnum ../../model_ST/model_expression/StructuredTextExpression.ecore#//ElementaryDataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//Location"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="array" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialValue" eType="ecore:EClass ../../model_ST/model_expression/StructuredTextExpression.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VariableDeclaration">
+    <eLiterals name="UNSET"/>
+    <eLiterals name="VAR" value="1"/>
+    <eLiterals name="VAR_EXTERNAL" value="2"/>
+    <eLiterals name="VAR_TEMP" value="3"/>
+    <eLiterals name="VAR_INPUT" value="4"/>
+    <eLiterals name="VAR_OUTPUT" value="5"/>
+    <eLiterals name="VAR_IN_OUT" value="6"/>
+    <eLiterals name="VAR_ACCESS" value="7"/>
+    <eLiterals name="VAR_GLOBAL" value="8"/>
+    <eLiterals name="VAR_CONFIG" value="9"/>
+    <eLiterals name="RETAIN" value="10"/>
+    <eLiterals name="NON_RETAIN" value="11"/>
+    <eLiterals name="CONSTANT" value="12"/>
+    <eLiterals name="AT" value="13"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AccessPath">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//AccessType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="POU">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlTasks" upperBound="-1"
+        eType="#//Task" eOpposite="#//Task/controlledPrograms"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" lowerBound="1"
+        eType="#//Declaration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="callees" upperBound="-1"
+        eType="#//POU"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="callers" upperBound="-1"
+        eType="#//POU"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="ecore:EClass ../../model_LanguageElement/languageElement.ecore#//LanguageElement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EEnum ../../model_ST/model_expression/StructuredTextExpression.ecore#//ElementaryDataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//OrganizationType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//Action" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlledPrograms" eType="#//POU"
+        eOpposite="#//POU/controlTasks"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AccessType">
+    <eLiterals name="UNSET"/>
+    <eLiterals name="PUBLIC" value="1"/>
+    <eLiterals name="PRIVATE" value="2"/>
+    <eLiterals name="INTERNAL" value="3"/>
+    <eLiterals name="PROTECTED" value="4" literal="PROTECTED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Location">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//VariableLocationType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataType" eType="#//VariableLocationDataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VariableLocationType">
+    <eLiterals name="UNSET"/>
+    <eLiterals name="Q" value="1"/>
+    <eLiterals name="M" value="2"/>
+    <eLiterals name="I" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VariableLocationDataType">
+    <eLiterals name="UNSET"/>
+    <eLiterals name="X" value="1" literal="BOOL"/>
+    <eLiterals name="Unspecified" value="2" literal="None"/>
+    <eLiterals name="B" value="3" literal="BYTE"/>
+    <eLiterals name="W" value="4" literal="WORD"/>
+    <eLiterals name="D" value="5" literal="DWORD"/>
+    <eLiterals name="L" value="6" literal="LWORD"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Declaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputVariables" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comment" upperBound="-1"
+        eType="ecore:EClass ../../model_LanguageElement/languageElement.ecore#//Comment"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inOutVariables" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalVariables" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputVariables" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//Struct" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Standard_Operator">
+    <eLiterals name="UNSET"/>
+    <eLiterals name="LD" value="1"/>
+    <eLiterals name="ST" value="2"/>
+    <eLiterals name="S" value="3"/>
+    <eLiterals name="R" value="4"/>
+    <eLiterals name="AND" value="5"/>
+    <eLiterals name="OR" value="6"/>
+    <eLiterals name="XOR" value="7"/>
+    <eLiterals name="ADD" value="8"/>
+    <eLiterals name="SUB" value="9"/>
+    <eLiterals name="MUL" value="10"/>
+    <eLiterals name="DIV" value="11"/>
+    <eLiterals name="GT" value="12"/>
+    <eLiterals name="GE" value="13"/>
+    <eLiterals name="EQ" value="14"/>
+    <eLiterals name="NE" value="15"/>
+    <eLiterals name="LE" value="17"/>
+    <eLiterals name="LT" value="18"/>
+    <eLiterals name="JMP" value="19"/>
+    <eLiterals name="CAL" value="20"/>
+    <eLiterals name="RET" value="21"/>
+    <eLiterals name="BRACKET_CLOSE" value="22"/>
+    <eLiterals name="SHL" value="23"/>
+    <eLiterals name="INC" value="24"/>
+    <eLiterals name="MIN" value="25"/>
+    <eLiterals name="MAX" value="26"/>
+    <eLiterals name="MUX" value="27"/>
+    <eLiterals name="LIMIT" value="28"/>
+    <eLiterals name="LEN" value="29"/>
+    <eLiterals name="LEFT" value="30"/>
+    <eLiterals name="RIGHT" value="31"/>
+    <eLiterals name="MID" value="32"/>
+    <eLiterals name="CONCAT" value="33"/>
+    <eLiterals name="INSERT" value="34"/>
+    <eLiterals name="DELETE" value="35"/>
+    <eLiterals name="REPLACE" value="36"/>
+    <eLiterals name="FIND" value="37"/>
+    <eLiterals name="MOD" value="38"/>
+    <eLiterals name="SIN" value="39"/>
+    <eLiterals name="COS" value="40"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OrganizationType">
+    <eLiterals name="PROGRAM"/>
+    <eLiterals name="FUNCTION" value="1"/>
+    <eLiterals name="FUNCTIONBLOCK" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" lowerBound="1"
+        eType="ecore:EClass ../../model_LanguageElement/languageElement.ecore#//LanguageElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Struct">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" lowerBound="1"
+        upperBound="-1" eType="#//Variable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayVariable" eSuperTypes="#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" lowerBound="1"
+        eType="ecore:EClass ../../model_ST/model_expression/StructuredTextExpression.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" lowerBound="1"
+        eType="ecore:EClass ../../model_ST/model_expression/StructuredTextExpression.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

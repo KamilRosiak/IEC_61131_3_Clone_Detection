@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.tu_bs.cs.isf.familymining.rcp_e4.parser.IParserInterface">
+      <interface
+            class="de.tu_bs.cs.isf.familymining.ppu_iec.parser.ST.impl.STParser"
+            description="Decomposes the syntactic structure of structured text"
+            id="STParser">
+      </interface>
+   </extension>
+   <extension
+         point="de.tu_bs.cs.isf.familymining.rcp_e4.parser.INodeCallbackInterface">
+      <interface
+            class="de.tu_bs.cs.isf.familymining.ppu_iec.parser.ST.impl.STNodeCallback"
+            description="no description"
+            id="STNodeCallback">
+      </interface>
+      <interface
+            class="de.tu_bs.cs.isf.familymining.ppu_iec.parser.ST.impl.STVariableCallback"
+            description="no description"
+            id="STVariableCallback">
+      </interface>
+      <interface
+            class="de.tu_bs.cs.isf.familymining.ppu_iec.parser.ST.impl.STExpressionCallback"
+            description="no description"
+            id="STExpressionCallback">
+      </interface>
+   </extension>
+
+</plugin>

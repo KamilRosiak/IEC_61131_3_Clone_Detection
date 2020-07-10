@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PpuIECEvolutionView
+Bundle-SymbolicName: de.tu_bs.cs.isf.familymining.ppu_iec.ppuIECEvolutionView
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.ppuIECEvolutionView
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.swt,
+ org.eclipse.jface

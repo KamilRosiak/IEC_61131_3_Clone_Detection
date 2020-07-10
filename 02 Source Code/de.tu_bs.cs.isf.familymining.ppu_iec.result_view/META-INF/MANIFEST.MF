@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Iec_editor_result
+Bundle-SymbolicName: de.tu_bs.cs.isf.familymining.ppu_iec.result_view;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: javax.inject,
+ org.eclipse.jface,
+ org.eclipse.e4.ui.di,
+ org.eclipse.e4.core.di.annotations,
+ de.tu_bs.cs.isf.familymining.rcp_e4.core,
+ de.tu_bs.cs.isf.familymining.rcp_e4.core,
+ de.tu_bs.cs.isf.familymining.ppu_iec.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: javax.annotation;version="1.2.0"
+Automatic-Module-Name: de.tu_bs.cs.isf.familymining.ppu_iec.rcp_e4.iec_editor
