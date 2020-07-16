@@ -31,8 +31,17 @@ List of Attributes for the comparison of IEC 61131-3 Arrtifacts
 | ST Number of Operators   | Structured Text | Compares the number of Operators in two ST implementations|
 | ST Number of Statements   | Structured Text | Compares the number of Statements in two ST implementations|
 | ST Type of Statements   | Structured Text | Compares the types of Statements in two ST implementations|
-
-
+| FunctionCall Parameter Types  | Structured Text Implementation | Compares the parameter types of two function calls|
+| FunctionCall Parameter Names  | Structured Text Implementation | Compares the parameter names of two function calls|
+| FunctionCall Name  | Structured Text Implementation | Compares the names of two function calls|
+| Assignment Left Side Name  | Structured Text Implementation | Compares the names of two assigned variables|
+| Assignment Left Side Type  | Structured Text Implementation | Compares the types of two assigned variables|
+| Assignment Right Side  | Structured Text Implementation | Compares the expression on the right side of a assignment|
+| If-Condition  | Structured Text Implementation | Compares the conditions of two If statements|
+| While-Condition  | Structured Text Implementation | Compares the conditions of two while statements|
+| For-Condition  | Structured Text Implementation | Compares the conditions of two for statements|
+| Case-Condition  | Structured Text Implementation | Compares the conditions of two case statements|
+| Exit or Return  | Structured Text Implementation | Compares exit and return statements|
 
 List of Optons that can be selected in a comparison metric.
 | Option Name  | Option Description |
