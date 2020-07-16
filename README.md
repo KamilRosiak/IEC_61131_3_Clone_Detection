@@ -50,15 +50,25 @@ List of Attributes for the comparison of IEC 61131-3 Arrtifacts
 | Number of Steps  | Sequential Function Chart | Compares the numer of steps of an SFC|
 | Qualifier of Steps  | Sequential Function Chart |Compares the qualifier of steps of an SFC |
 | Step Name Compare  | Sequential Function Chart Impl |Compares the names of two steps |
-
 | Step Name Compare  | Sequential Function Chart Impl | Compares the names of two steps |
 | Step Activity Compare  | Sequential Function Chart Impl | Compares the activity status of two steps|
 | Step Linked Variable Compare  | Sequential Function Chart Impl |Compares the the linked variables of two steps |
 | Step In Transition Compare | Sequential Function Chart Impl |Compares the incomming transitions of two steps |
 | Step Out Transition Compare | Sequential Function Chart Impl |Compares the outgoing transitions of two steps |
 | Step Level Compare | Sequential Function Chart Impl |Compares the level of two steps |
-
-
+| Number of Coils | Ladder Diagram |Compares the number of coils in a LD|
+| Contact Expression | Ladder Diagram Impl |Compares the expression of two contacts|
+| Power Rail | Ladder Diagram Impl | Assigns the left and right power rail a mandatory value|
+| Target Elements| Ladder Diagram Impl | Compares the types of all outgoing elements|
+| Source Elements | Ladder Diagram Impl | Compares the types of all incomming elements|
+| Coil Expression | Ladder Diagram Impl | Compares the expression of two coils|
+| Block Name Compare| Function Block Diagram Impl | Compares the names of two Function Blocks|
+| Block Type Compare| Function Block Diagram Impl | Compares the types of two Function Blocks|
+| Block Input Elements| Function Block Diagram Impl | Compares the input elements of two Function Blocks|
+| Block Output Elements| Function Block Diagram Impl |Compares the output elements of two Function Blocks|
+| Block Input Ports| Function Block Diagram Impl | Compares the input ports of two Function Blocks|
+| Block Output Ports| Function Block Diagram Impl | Compares the output ports of two Function Blocks|
+| Block Level| Function Block Diagram Impl | Compares the level of two Function Blocks|
 
 List of Optons that can be selected in a comparison metric.
 | Option Name  | Option Description |
