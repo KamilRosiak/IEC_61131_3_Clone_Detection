@@ -16,15 +16,21 @@ List of Attributes for the comparison of IEC 61131-3 Arrtifacts
 | Number of Actions     | POU | Compares the number of actions |
 | Programming Languages of a POU  | POU | Evaluates the programming languages utilized by the POUs |
 | Name - Levenshtein Distance    | POU | Compares the names of two POUs using the levenshtein distance |
-|  Variables - Detailed    | POU | Compares the different types of variables idependently, then aggregates them all  |
-|  Type    | POU | Evaluates if POUs have the same type, thus, Program, Function or Function Block |
-|     Variables Plain | POU | Compares all types of variables idependently then aggregates them all |
-|    Version Number  | POU | Compares POUs by their Version Number |
-|      | POU |  |
-
-
-
-
+| Variables - Detailed    | POU | Compares the different types of variables idependently, then aggregates them all  |
+| Type    | POU | Evaluates if POUs have the same type, thus, Program, Function or Function Block |
+| Variables Plain | POU | Compares all types of variables idependently then aggregates them all |
+| Version Number  | POU | Compares POUs by their Version Number |
+| Adresses of Variables  | Variables | Compares the location of two variables |
+| Variable Names - Levenshtein Distance | Variables | Compares the names of two variables using the levenshtein distance |
+| Type of Variable | Variables | Compares the data type of two variables |
+| Scope of Variable   | Variables | Compares the scopare of variables |
+| DataLocation of Variable   | Variables | Compares the data location of variables |
+| ST Number of Conditions in IF   | Structured Text | Compares the number of conditions in IF statements|
+| ST Number of Conditionals  | Structured Text | Compares the number of IF, ELSE and ELSEIF in two ST implementations|
+| ST Number of Operands   | Structured Text | Compares the number of Operands in two ST implementations|
+| ST Number of Operators   | Structured Text | Compares the number of Operators in two ST implementations|
+| ST Number of Statements   | Structured Text | Compares the number of Statements in two ST implementations|
+| ST Type of Statements   | Structured Text | Compares the types of Statements in two ST implementations|
 
 
 
