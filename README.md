@@ -71,5 +71,26 @@ List of Attributes for the comparison of IEC 61131-3 Arrtifacts
 | Block Level| Function Block Diagram Impl | Compares the level of two Function Blocks|
 
 List of Optons that can be selected in a comparison metric.
-| Option Name  | Option Description |
-| ------------- | ------------- |
+| Option Name  | Option Level | Option Description |
+| ------------- | ------------- |------------------|
+| Compare POUs | Configuration |When activated POUs will be compared|
+| Compare Global Variables | Configuration |When activated globale Variables will be compared|
+| Compare POU implementation | POU |When activated the implementation of POUs will be compared|
+| Compare POU variables | POU |When activated local POU variables will be compared|
+| Compare POU actions | POU |  When activated POU actions will be compared |
+| Compare Action implementation | Action |  When activated the implementation of actions will be compared |
+| Compare Structured Text | Languages |  When activated ST implementations will be compared|
+| Compare Structured Text Impl | Structured Text |  When activated ST implementations will be compared statement-wise|
+| Compare Sequential Function Chart| Languages |  When activated SFC implementations will be compared|
+| Compare Sequential Function Chart Impl | Sequential Function Chart |  When activated SFC implementations will be compared step-wise|
+| Compare Action Implementation | Sequential Function Chart |  When activated the implementation of actions will be compared|
+| Compare Ladder Diagram | Languages |  When activated LD implementations will be compared|
+| Compare Ladder Diagram Impl| Ladder Diagram  | When activated LD implementations will be compared element-wise|
+| Compare Function Blocks | Ladder Diagram  | When activated Function Block in Ladder Diagram will be compared|
+| Compare Function Block Diagram | Languages |  When activated FBD implementations will be compared|
+| Compare Function Block Diagram Impl |  Function Block Diagram  |  When activated FBD implementations will be compared block-wise|
+| Compare Structured Text | Function Block Diagram  |  When activated ST implementations of Function Blocks will be compared|
+
+
+
+
