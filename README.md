@@ -2,7 +2,7 @@
 
 List of Attributes and Options
 
-| First Header  | Second Header |
+| Attribute Name  | Attribute Description |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
