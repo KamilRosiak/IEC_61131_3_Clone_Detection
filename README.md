@@ -11,8 +11,16 @@ List of Attributes for the comparison of IEC 61131-3 Arrtifacts
 | Data Type of Global Variables | Configuration | Compares the data types of global variables in both projects |
 | Number of Global Variables | Configuration | Evaluates if the projects have the same number of global variables |
 | Action Name - Levenshtein Distance| Action | Compares the names of two actions using the levenshtein distance |
-
-
+| Name - Complete   | POU | Compares the names of POUs for total equivalence |
+| POU Implementation  | POU | Compares the implementation of POUs  |
+| Number of Actions     | POU | Compares the number of actions |
+| Programming Languages of a POU  | POU | Evaluates the programming languages utilized by the POUs |
+| Name - Levenshtein Distance    | POU | Compares the names of two POUs using the levenshtein distance |
+|  Variables - Detailed    | POU | Compares the different types of variables idependently, then aggregates them all  |
+|  Type    | POU | Evaluates if POUs have the same type, thus, Program, Function or Function Block |
+|     Variables Plain | POU | Compares all types of variables idependently then aggregates them all |
+|    Version Number  | POU | Compares POUs by their Version Number |
+|      | POU |  |
 
 
 
