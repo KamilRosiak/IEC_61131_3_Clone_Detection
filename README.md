@@ -49,7 +49,14 @@ List of Attributes for the comparison of IEC 61131-3 Arrtifacts
 | Number of Actions  | Sequential Function Chart | Compares the numer of actions of an SFC|
 | Number of Steps  | Sequential Function Chart | Compares the numer of steps of an SFC|
 | Qualifier of Steps  | Sequential Function Chart |Compares the qualifier of steps of an SFC |
-| Qualifier of Steps  | Sequential Function Chart Impl |Compares the qualifier of steps of an SFC |
+| Step Name Compare  | Sequential Function Chart Impl |Compares the names of two steps |
+
+| Step Name Compare  | Sequential Function Chart Impl | Compares the names of two steps |
+| Step Activity Compare  | Sequential Function Chart Impl | Compares the activity status of two steps|
+| Step Linked Variable Compare  | Sequential Function Chart Impl |Compares the the linked variables of two steps |
+| Step In Transition Compare | Sequential Function Chart Impl |Compares the incomming transitions of two steps |
+| Step Out Transition Compare | Sequential Function Chart Impl |Compares the outgoing transitions of two steps |
+| Step Level Compare | Sequential Function Chart Impl |Compares the level of two steps |
 
 
 
