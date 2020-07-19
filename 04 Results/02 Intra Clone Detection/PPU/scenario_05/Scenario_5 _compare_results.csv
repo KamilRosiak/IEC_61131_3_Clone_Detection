@@ -1,0 +1,17 @@
+;MAIN;BistableCylinder;InductiveSensor;MicroSwitch;MonostableCylinder;Motor;OperationPanel;ProportionalValve;TurningTable;VacuumGripper;VacuumSwitch;Valve;Crane;Stack;Stamp;PPU;
+MAIN;1.0;;;;;;;;;;;;;;;;
+BistableCylinder;;1.0;;;0.92722225;;;;;;;;;;;;
+InductiveSensor;;;1.0;0.7497436;;;;;;;0.7574359;;;;;;
+MicroSwitch;;;;1.0;;;;;;;0.8397436;;;;;;
+MonostableCylinder;;;;;1.0;;;;;;;;;;;;
+Motor;;;;;;1.0;;;;;;;;;;;
+OperationPanel;;;;;;;1.0;;;;;;;;;;
+ProportionalValve;;;;;;;;1.0;;;;;;;;;
+TurningTable;;;;;;;;;1.0;;;;;;;;
+VacuumGripper;;;;;;;;;;1.0;;;;;;;
+VacuumSwitch;;;;;;;;;;;1.0;;;;;;
+Valve;;;;;;;;;;;;1.0;;;;;
+Crane;;;;;;;;;;;;;1.0;;;;
+Stack;;;;;;;;;;;;;;1.0;;;
+Stamp;;;;;;;;;;;;;;;1.0;;
+PPU;;;;;;;;;;;;;;;;1.0;
