@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="Beckhoff Automation GmbH" productName="TwinCAT PLC Control" productVersion="3.5.13.20" creationDateTime="2020-07-07T10:35:37.2985488" />
+  <contentHeader name="Example" modificationDateTime="2020-07-07T10:35:37.3005449">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous />
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/application" handleUnknown="implementation">
+      <resource name="Example">
+        <task name="PlcTask" interval="PT0S" priority="20">
+          <pouInstance name="MAIN" typeName="">
+            <documentation>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+            </documentation>
+          </pouInstance>
+          <addData>
+            <data name="http://www.3s-software.com/plcopenxml/tasksettings" handleUnknown="implementation">
+              <TaskSettings KindOfTask="Cyclic" Interval="10000" IntervalUnit="us">
+                <Watchdog Enabled="false" TimeUnit="ms" />
+              </TaskSettings>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+              <ObjectId>875ceb36-c171-4a1f-9b29-d0398b6272b1</ObjectId>
+            </data>
+          </addData>
+        </task>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <pou name="Example" pouType="program">
+              <interface>
+                <localVars>
+                  <variable name="A">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                  <variable name="B">
+                    <type>
+                      <BOOL />
+                    </type>
+                  </variable>
+                </localVars>
+              </interface>
+              <actions>
+                <action name="EXIT_ACTION">
+                  <body>
+                    <LD>
+                      <leftPowerRail localId="0">
+                        <position x="0" y="0" />
+                        <connectionPointOut formalParameter="none" />
+                      </leftPowerRail>
+                      <comment localId="1" height="0" width="0">
+                        <position x="0" y="0" />
+                        <content>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                        </content>
+                      </comment>
+                      <vendorElement localId="2">
+                        <position x="0" y="0" />
+                        <alternativeText>
+                          <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+                        </alternativeText>
+                        <addData>
+                          <data name="http://www.3s-software.com/plcopenxml/fbdelementtype" handleUnknown="implementation">
+                            <ElementType xmlns="">networktitle</ElementType>
+                          </data>
+                        </addData>
+                      </vendorElement>
+                      <contact localId="4" negated="false" storage="none" edge="none">
+                        <position x="0" y="0" />
+                        <connectionPointIn>
+                          <connection refLocalId="0" />
+                        </connectionPointIn>
+                        <connectionPointOut />
+                        <variable>A</variable>
+                      </contact>
+                      <block localId="3" typeName="EXECUTE">
+                        <position x="0" y="0" />
+                        <inputVariables>
+                          <variable formalParameter="EN">
+                            <connectionPointIn>
+                              <connection refLocalId="4" />
+                            </connectionPointIn>
+                          </variable>
+                        </inputVariables>
+                        <inOutVariables />
+                        <outputVariables>
+                          <variable formalParameter="ENO">
+                            <connectionPointOut />
+                          </variable>
+                        </outputVariables>
+                        <addData>
+                          <data name="http://www.3s-software.com/plcopenxml/fbdcalltype" handleUnknown="implementation">
+                            <CallType xmlns="">execute</CallType>
+                          </data>
+                          <data name="http://www.3s-software.com/plcopenxml/stcode" handleUnknown="implementation">
+                            <STCode xmlns="">IF A THEN
+	B:= FALSE;
+END_IF</STCode>
+                          </data>
+                        </addData>
+                      </block>
+                      <rightPowerRail localId="2147483646">
+                        <position x="0" y="0" />
+                        <connectionPointIn>
+                          <connection refLocalId="3" formalParameter="">
+                            <addData>
+                              <data name="http://www.3s-software.com/plcopenxml/ldbranchid" handleUnknown="implementation">
+                                <BranchId xmlns="">2</BranchId>
+                              </data>
+                            </addData>
+                          </connection>
+                        </connectionPointIn>
+                      </rightPowerRail>
+                    </LD>
+                  </body>
+                  <addData>
+                    <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                      <ObjectId>396812bb-6b5f-4923-ac05-22389963ed92</ObjectId>
+                    </data>
+                  </addData>
+                </action>
+              </actions>
+              <body>
+                <SFC>
+                  <step localId="0" initialStep="true" name="Start">
+                    <position x="0" y="0" />
+                    <connectionPointIn />
+                    <connectionPointOut formalParameter="sfc" />
+                    <connectionPointOutAction formalParameter="x" />
+                    <addData>
+                      <data name="http://www.3s-software.com/plcopenxml/sfc/element" handleUnknown="implementation">
+                        <attributes xmlns="">
+                          <attribute guid="38391c6d-6d4a-42f8-8ee7-9f45e5adafa8">Start</attribute>
+                          <attribute guid="01580b27-6378-448b-8ecb-0e4b795b58d6">FALSE</attribute>
+                          <attribute guid="bc882c11-1e91-4dd8-a6b8-2075724ed18b">0</attribute>
+                          <attribute guid="6844a48e-46c2-4cc8-a185-a478f3b99cc0">TRUE</attribute>
+                          <attribute guid="62e1754b-7629-4e63-9cec-10ae0c536f1f">FALSE</attribute>
+                        </attributes>
+                      </data>
+                    </addData>
+                  </step>
+                  <actionBlock localId="2">
+                    <position x="0" y="0" />
+                    <connectionPointIn>
+                      <connection refLocalId="0" />
+                    </connectionPointIn>
+                    <action localId="1" qualifier="D" duration="" indicator="">
+                      <relPosition x="0" y="0" />
+                      <reference name="EXIT_ACTION" />
+                      <connectionPointOut />
+                      <addData>
+                        <data name="http://www.3s-software.com/plcopenxml/sfc/element" handleUnknown="implementation">
+                          <attributes xmlns="">
+                            <attribute guid="38391c6d-6d4a-42f8-8ee7-9f45e5adafa8">EXIT_ACTION</attribute>
+                            <attribute guid="01580b27-6378-448b-8ecb-0e4b795b58d6">FALSE</attribute>
+                            <attribute guid="bc882c11-1e91-4dd8-a6b8-2075724ed18b">0</attribute>
+                            <attribute guid="e174fc0d-80b0-4a9e-a530-ca239c249a50">D</attribute>
+                          </attributes>
+                        </data>
+                      </addData>
+                    </action>
+                  </actionBlock>
+                  <inVariable localId="3">
+                    <position x="0" y="0" />
+                    <connectionPointOut />
+                    <expression>B</expression>
+                  </inVariable>
+                  <transition localId="4">
+                    <position x="0" y="0" />
+                    <connectionPointIn>
+                      <connection refLocalId="0" formalParameter="sfc" />
+                    </connectionPointIn>
+                    <condition>
+                      <connectionPointIn>
+                        <connection refLocalId="3" />
+                      </connectionPointIn>
+                    </condition>
+                    <addData>
+                      <data name="http://www.3s-software.com/plcopenxml/sfc/element" handleUnknown="implementation">
+                        <attributes xmlns="">
+                          <attribute guid="38391c6d-6d4a-42f8-8ee7-9f45e5adafa8">B</attribute>
+                          <attribute guid="01580b27-6378-448b-8ecb-0e4b795b58d6">FALSE</attribute>
+                          <attribute guid="bc882c11-1e91-4dd8-a6b8-2075724ed18b">0</attribute>
+                          <attribute guid="62e1754b-7629-4e63-9cec-10ae0c536f1f">FALSE</attribute>
+                          <attribute guid="8294df19-5962-4dee-a874-1051dabb0e3e">0</attribute>
+                        </attributes>
+                      </data>
+                    </addData>
+                  </transition>
+                  <jumpStep localId="5" targetName="Start">
+                    <position x="0" y="0" />
+                    <connectionPointIn>
+                      <connection refLocalId="4" />
+                    </connectionPointIn>
+                    <addData>
+                      <data name="http://www.3s-software.com/plcopenxml/sfc/element" handleUnknown="implementation">
+                        <attributes xmlns="">
+                          <attribute guid="38391c6d-6d4a-42f8-8ee7-9f45e5adafa8">Start</attribute>
+                          <attribute guid="01580b27-6378-448b-8ecb-0e4b795b58d6">FALSE</attribute>
+                        </attributes>
+                      </data>
+                    </addData>
+                  </jumpStep>
+                </SFC>
+              </body>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/sfcsettings" handleUnknown="implementation">
+                  <SFCSettings>
+                    <LibTitle>IecSfc</LibTitle>
+                    <LibCompany>System</LibCompany>
+                    <LibVersion>3.4.2.0</LibVersion>
+                    <LibNamespace />
+                    <CalcActiveTransOnly>false</CalcActiveTransOnly>
+                    <UseDefaults>false</UseDefaults>
+                    <Flags>
+                      <EnableLimit Declare="true" Use="false" />
+                      <Init Declare="true" Use="false" />
+                      <Reset Declare="true" Use="false" />
+                      <QuitError Declare="true" Use="false" />
+                      <Pause Declare="true" Use="false" />
+                      <Error Declare="true" Use="false" />
+                      <Trans Declare="true" Use="false" />
+                      <ErrorStep Declare="true" Use="false" />
+                      <ErrorPOU Declare="true" Use="false" />
+                      <CurrentStep Declare="true" Use="false" />
+                      <Tip Declare="true" Use="false" />
+                      <TipMode Declare="true" Use="false" />
+                      <MaxFlags Declare="true" Use="false" />
+                      <SFCErrorAnalyzation Declare="true" Use="false" />
+                      <SFCErrorAnalyzationTable Declare="true" Use="false" />
+                    </Flags>
+                  </SFCSettings>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">PROGRAM Example
+VAR
+	A: BOOL;
+	B: BOOL;
+END_VAR
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>30d44249-28bf-4fcc-9049-6d65db5de760</ObjectId>
+                </data>
+              </addData>
+            </pou>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/libraries" handleUnknown="implementation">
+            <Libraries>
+              <Library Name="#Tc2_Standard" Namespace="Tc2_Standard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Tc2_Standard, * (Beckhoff Automation GmbH)" />
+              <Library Name="#Tc2_System" Namespace="Tc2_System" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Tc2_System, * (Beckhoff Automation GmbH)">
+                <Parameters>
+                  <Parameter Name="TABLE_UPPER_BOUND" Value="15" />
+                  <Parameter Name="STRING_LENGTH_EXP" Value="255" />
+                  <Parameter Name="STRING_LENGTH_ADDRESS" Value="20" />
+                  <Parameter Name="STRING_LENGTH_COMMENT" Value="255" />
+                  <Parameter Name="STRING_LENGTH_OUTSTRING" Value="255" />
+                  <Parameter Name="TABLE_SHOW_VALID_ITEMS" Value="FALSE" />
+                </Parameters>
+              </Library>
+              <Library Name="#Tc3_Module" Namespace="Tc3_Module" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Tc3_Module, * (Beckhoff Automation GmbH)" />
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>7adf318a-ec13-4e8f-a33a-82eef16ac88a</ObjectId>
+                </data>
+              </addData>
+            </Libraries>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>b259fa52-cb50-43b4-afc1-a2d772e6cb9e</ObjectId>
+          </data>
+        </addData>
+      </resource>
+    </data>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Object Name="Example" ObjectId="b259fa52-cb50-43b4-afc1-a2d772e6cb9e">
+          <Object Name="Bibliotheksverwalter" ObjectId="7adf318a-ec13-4e8f-a33a-82eef16ac88a" />
+          <Object Name="PlcTask" ObjectId="875ceb36-c171-4a1f-9b29-d0398b6272b1" />
+          <Folder Name="POUs">
+            <Object Name="Example" ObjectId="30d44249-28bf-4fcc-9049-6d65db5de760">
+              <Object Name="EXIT_ACTION" ObjectId="396812bb-6b5f-4923-ac05-22389963ed92" />
+            </Object>
+          </Folder>
+        </Object>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>
