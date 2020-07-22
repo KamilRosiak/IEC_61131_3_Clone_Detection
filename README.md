@@ -1,5 +1,24 @@
 # IEC_61131_3_Clone_Detection
-![Configuration Meta-Model](05%20Images/configuration_meta_model.png "The configuration meta-models represents the strucutre of IEC 61131-3 projects an their parts")
+<ins>Configuration Meta-Model</ins>
+![Configuration Meta-Model](05%20Images/configuration_meta_model.png)
+
+<ins>Strucutred Text Meta-Model</ins>
+![Strucutred Text Meta-Model](05%20Images/st_meta_model.png)
+
+<ins>Sequential Function Chart Meta-Model</ins>
+![Sequential Function Chart Meta-Model](05%20Images/sfc_meta_model.png)
+
+<ins>Diagram Meta-Model</ins>
+![Sequential Function Chart Meta-Model](05%20Images/diagram_meta_model.png)
+
+<ins>Function Block Diagram Meta-Model</ins>
+![Sequential Function Chart Meta-Model](05%20Images/fbd_meta_model.png)
+
+<ins>Ladder Diagram Meta-Model</ins>
+![Sequential Function Chart Meta-Model](05%20Images/ld_meta_model.png)
+
+<ins>Expression Meta-Model</ins>
+![Sequential Function Chart Meta-Model](05%20Images/expression_meta_model.png)
 
 
 List of Attributes for the comparison of IEC 61131-3 Arrtifacts
