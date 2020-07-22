@@ -1,6 +1,6 @@
 # IEC_61131_3_Clone_Detection
-![alt text](https://github.com/TUBS-ISF/IEC_61131_3_Clone_Detection/05 Images/configuration_meta_model.png ?raw=true)
-![Alt text](05 Images/configuration_meta_model.png?raw=true "Title")
+![alt text](https://github.com/TUBS-ISF/IEC_61131_3_Clone_Detection/05%Images/configuration_meta_model.png ?raw=true)
+![Alt text](05%Images/configuration_meta_model.png?raw=true "Title")
 
 
 
