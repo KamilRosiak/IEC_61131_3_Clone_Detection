@@ -1,9 +1,5 @@
 # IEC_61131_3_Clone_Detection
-
-![alt text](05%Images/configuration_meta_model.png?raw=true)
-
-
-
+![Configuration Meta-Model](05%20Images/configuration_meta_model.png "The configuration meta-models represents the strucutre of IEC 61131-3 projects an their parts")
 
 
 List of Attributes for the comparison of IEC 61131-3 Arrtifacts
