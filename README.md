@@ -1,4 +1,8 @@
 # IEC_61131_3_Clone_Detection
+![alt text](https://github.com/TUBS-ISF/IEC_61131_3_Clone_Detection/05 Images/configuration_meta_model.png ?raw=true)
+
+
+
 
 
 List of Attributes for the comparison of IEC 61131-3 Arrtifacts
